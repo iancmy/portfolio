@@ -1,0 +1,2926 @@
+[[videos]]
+date = 2015-06-14
+title = "Dota2 Short Film Contest"
+description = "I just discovered my interest in video editing plus I'm pretty much playing Dota2 every night. So when they announced a short-film contest, I did not hesitate."
+role = ["director", "video_editor"]
+type = ["long-form", "unpublished"]
+client = "Personal"
+category = ["other"]
+fallback_src = "https://youtu.be/PtT49H9tlgY"
+is_yt = false
+
+
+[[videos]]
+date = 2015-11-26
+title = "Maria's 18th Teaser"
+description = "This is where it all began. It was my first project, using a borrowed camera and my new-found interest in video editing for a friend."
+role = ["director", "camera", "video_editor"]
+type = ["long-form", "unpublished"]
+client = "Private"
+category = ["teaser", "event"]
+fallback_src = "https://youtu.be/yUvs9i8Lero"
+is_yt = false
+
+
+[[videos]]
+date = 2015-12-21
+title = "Honda Cars Gentleman Parody MV"
+role = ["video_editor"]
+type = ["long-form", "unpublished"]
+client = "Honda Cars Philippines"
+category = ["music_video"]
+fallback_src = "https://youtu.be/3pp60ZDlBTU"
+is_yt = false
+
+
+[[videos]]
+date = 2016-01-25
+title = "Makipamuhay XXI"
+role = ["camera", "video_editor"]
+type = ["long-form", "unpublished"]
+client = "Personal"
+category = ["vlog"]
+fallback_src = "https://youtu.be/YJuYvL8V0gs"
+is_yt = false
+
+
+[[videos]]
+date = 2016-02-15
+title = "Coca Cola Advertisement"
+role = ["director", "camera", "video_editor"]
+type = ["long-form", "unpublished"]
+client = "Private"
+category = ["promotional"]
+fallback_src = "https://youtu.be/MhVzP3_sdAQ"
+is_yt = false
+
+
+[[videos]]
+date = 2016-03-27
+title = "Flamousse Advertisement"
+role = ["director", "camera", "video_editor"]
+type = ["long-form", "unpublished"]
+client = "Private"
+category = ["promotional"]
+fallback_src = "https://youtu.be/SQ0JO57oZaQ"
+is_yt = false
+
+
+[[videos]]
+date = 2016-05-10
+title = "Gising Short Film"
+role = ["camera", "video_editor"]
+type = ["long-form"]
+client = "Personal"
+category = ["short_film"]
+fallback_src = "https://youtu.be/DlGb7kQejTs"
+ext_src = "https://youtu.be/UkamqPmzeOo?si=9KBG8CVRscZCIhll"
+is_yt = true
+
+
+[[videos]]
+date = 2016-07-09
+title = "Nica's 18th Photo Compilation"
+role = ["video_editor"]
+type = ["long-form", "unpublished"]
+client = "Private"
+category = ["compilation"]
+fallback_src = "https://youtu.be/_FVPWYEhVfQ"
+is_yt = false
+
+
+[[videos]]
+date = 2016-09-19
+title = "Battle of the Bands 2016 Teaser"
+role = ["director", "camera", "video_editor"]
+type = ["long-form"]
+client = "Letran Calamba"
+category = ["teaser", "event"]
+fallback_src = "https://youtu.be/1eN7gQXZiSI"
+ext_src = "https://www.facebook.com/share/v/16hMVYmc6J/"
+is_yt = false
+
+
+[[videos]]
+date = 2016-11-29
+title = "Paskong Arriba MV Teaser"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Letran Calamba"
+category = ["teaser", "music_video"]
+fallback_src = "https://youtu.be/SlvgsjcT78o"
+ext_src = "https://www.facebook.com/share/v/16sayUoZBT/"
+is_yt = false
+
+
+[[videos]]
+date = 2016-12-10
+title = "Paskong Arriba MV"
+role = ["director", "camera", "video_editor"]
+type = ["long-form"]
+client = "Letran Calamba"
+category = ["music_video"]
+fallback_src = "https://youtu.be/jA6SsZKvq18"
+ext_src = "https://www.facebook.com/share/v/14HVsxkFPSw/"
+is_yt = false
+
+
+[[videos]]
+date = 2017-02-28
+title = "Letran Advertisement 1"
+role = ["director", "camera", "video_editor"]
+type = ["long-form", "unpublished"]
+client = "Private"
+category = ["promotional"]
+fallback_src = "https://youtu.be/8Ea87SQugp8"
+is_yt = false
+
+
+[[videos]]
+date = 2017-03-03
+title = "Mcdonald's Advertisement"
+role = ["director", "camera", "video_editor"]
+type = ["long-form", "unpublished"]
+client = "Private"
+category = ["promotional"]
+fallback_src = "https://youtu.be/GOHsW_9puUI"
+is_yt = false
+
+
+[[videos]]
+date = 2017-03-10
+title = "Letran Advertisement 2"
+role = ["director", "camera", "video_editor"]
+type = ["long-form", "unpublished"]
+client = "Private"
+category = ["promotional"]
+fallback_src = "https://youtu.be/0PeEJpn1MK0"
+is_yt = false
+
+
+[[videos]]
+date = 2017-06-28
+title = "PNagpala Resto Advertisement"
+role = ["director", "camera", "video_editor"]
+type = ["long-form", "unpublished"]
+client = "Private"
+category = ["promotional"]
+fallback_src = "https://youtu.be/7jeFcF2XkCw"
+is_yt = false
+
+
+[[videos]]
+date = 2017-06-29
+title = "7 Lakes of San Pablo Vlog"
+role = ["camera", "video_editor"]
+type = ["long-form", "unpublished"]
+client = "Private"
+category = ["vlog"]
+fallback_src = "https://youtu.be/FlN8rqEnt1M"
+is_yt = false
+
+
+[[videos]]
+date = 2017-07-01
+title = "Onyang's Wings Advertisement"
+role = ["director", "camera", "video_editor"]
+type = ["long-form", "unpublished"]
+client = "Private"
+category = ["promotional"]
+fallback_src = "https://youtu.be/Zn-oi4dSS-0"
+is_yt = false
+
+
+[[videos]]
+date = 2017-10-04
+title = "Letran's Got Talent 2017 Teaser"
+role = ["camera", "video_editor"]
+type = ["long-form"]
+client = "Letran Calamba"
+category = ["teaser", "event"]
+fallback_src = "https://youtu.be/IazS_MUVT7w"
+ext_src = "https://www.facebook.com/share/v/178SSNeHth/"
+is_yt = false
+
+
+[[videos]]
+date = 2017-10-09
+title = "Battle of the Bands 2017 Teaser"
+role = ["director", "camera", "video_editor"]
+type = ["long-form", "unpublished"]
+client = "Letran Calamba"
+category = ["teaser", "event"]
+fallback_src = "https://youtu.be/zbSI8_0ZjyE"
+is_yt = false
+
+
+[[videos]]
+date = 2017-12-08
+title = "Xia's 18th Teaser"
+role = ["director", "camera", "video_editor"]
+type = ["long-form", "unpublished"]
+client = "Private"
+category = ["teaser", "event"]
+fallback_src = "https://youtu.be/4HK2h4OkVJ4"
+is_yt = false
+
+
+[[videos]]
+date = 2017-12-21
+title = "Xia's 18th Event Cover"
+role = ["camera", "video_editor"]
+type = ["long-form", "unpublished"]
+client = "Private"
+category = ["event"]
+fallback_src = "https://youtu.be/ouaB4Ks50kA"
+is_yt = false
+
+
+[[videos]]
+date = 2017-12-29
+title = "Bicol 2017"
+role = ["camera", "video_editor"]
+type = ["long-form", "unpublished"]
+client = "Personal"
+category = ["vlog"]
+fallback_src = "https://youtu.be/2oLC0tiow9w"
+is_yt = false
+
+
+[[videos]]
+date = 2018-03-22
+title = "Dogeaters Short Film"
+role = ["director", "camera", "video_editor"]
+type = ["long-form", "unpublished"]
+client = "Private"
+category = ["short_film"]
+fallback_src = "https://youtu.be/kzLdlcXCcyA"
+is_yt = false
+
+
+[[videos]]
+date = 2018-09-11
+title = "Pat's 18th Teaser"
+role = ["director", "camera", "video_editor"]
+type = ["long-form", "unpublished"]
+client = "Private"
+category = ["teaser", "event"]
+fallback_src = "https://youtu.be/048Bcbxa0VY"
+is_yt = false
+
+
+[[videos]]
+date = 2018-11-02
+title = "Getlemen's Club Advertisement"
+role = ["director", "camera", "video_editor"]
+type = ["long-form", "unpublished"]
+client = "Personal"
+category = ["promotional"]
+fallback_src = "https://youtu.be/v792kcRTKbE"
+is_yt = false
+
+
+[[videos]]
+date = 2018-11-21
+title = "Battle of the Bands 2018 Teaser"
+role = ["director", "camera", "video_editor"]
+type = ["long-form"]
+client = "Letran Calamba"
+category = ["teaser", "event"]
+fallback_src = "https://youtu.be/M9WtbWCp128"
+ext_src = "https://www.facebook.com/share/v/1GUATWEhsb/"
+is_yt = false
+
+
+[[videos]]
+date = 2019-03-10
+title = "Anti-bullying Advocacy"
+role = ["director", "camera", "video_editor"]
+type = ["long-form", "unpublished"]
+client = "Private"
+category = ["promotional"]
+fallback_src = "https://youtu.be/3oYx8tNGVRk"
+is_yt = false
+
+
+[[videos]]
+date = 2020-06-27
+title = "Employee Farewell"
+role = ["video_editor"]
+type = ["long-form", "unpublished"]
+client = "Private"
+category = ["compilation"]
+fallback_src = "https://youtu.be/nRrYK7Ah0fs"
+is_yt = false
+
+
+[[videos]]
+date = 2020-07-03
+title = "Birthday Celebration"
+role = ["video_editor"]
+type = ["long-form", "unpublished"]
+client = "Private"
+category = ["compilation"]
+fallback_src = "https://youtu.be/E5r0MsGJVNk"
+is_yt = false
+
+
+[[videos]]
+date = 2022-03-09
+title = "Match MVP on Breeze???"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/uDdZ9WWSLeo"
+ext_src = "https://fb.watch/yZCA271Xry/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-03-11
+title = "Reyna Insane 21-Kill Game"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/dysz80gOpxo"
+ext_src = "https://fb.watch/yZCjdgpVRc/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-03-15
+title = "Dominate Haven = Rank Up"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/1PxUWQ0pv6k"
+ext_src = "https://fb.watch/yZCCE7U6k3/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-03-16
+title = "Slow Start Into a 21K Finish"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/36Owrz633UY"
+ext_src = "https://fb.watch/yZCDgE5i4Y/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-03-27
+title = "Clicking Heads with Jett"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/nwqMmMHguqg"
+ext_src = "https://fb.watch/yZCEMSi4P3/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-03-29
+title = "Dropping a 34 Bomb on Icebox"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/kY47ipxFYy4"
+ext_src = "https://fb.watch/yZCFB_bJJl/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-03-30
+title = "13-0 Clean Sweep with Youtubers"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/puwjdMomYK8"
+ext_src = "https://fb.watch/yZCHX6aAY5/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-03-31
+title = "Getting Another Match MVP!!!"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/bn5PXL1nFCU"
+ext_src = "https://fb.watch/yZCIADKE6o/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-04-01
+title = "Massive Comeback and OT Win!"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/i_6u5xS6kzw"
+ext_src = "https://fb.watch/yZCJrb1NAB/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-04-11
+title = "I Forgot I Was Smurfing"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/8Jxf8JxuZKc"
+ext_src = "https://fb.watch/yZCOCPCbqG/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-04-12
+title = "This Game is Just Too Easy"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/cJTVydpR8no"
+ext_src = "https://fb.watch/yZCPq4hvLJ/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-04-20
+title = "5 vs 5 with Other Minecraft CC's"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/Rvd3mXjjuek"
+ext_src = "https://fb.watch/yZCRuE_OuX/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-04-21
+title = "17 Kills With Only a Sheriff"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/dBv5EZF3TdY"
+ext_src = "https://fb.watch/yZCSfF2uzE/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-04-22
+title = "Match MVP with a Judge"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/Vr0DPviCGtg"
+ext_src = "https://fb.watch/yZCS-u6iUr/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-05-12
+title = "OP-ING My Way Back To Immortal 2"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/b5YBTMgA_ms"
+ext_src = "https://fb.watch/yZCW85J8Te/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-05-14
+title = "Playing Some PVPLEGACY"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/EVTAWhw1QjQ"
+ext_src = "https://fb.watch/yZCXogBuD-/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-05-15
+title = "Galaxy Royale Gets Me Into Valo Mood"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/mzZypn0dN00"
+ext_src = "https://fb.watch/yZCY69k6hD/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-05-23
+title = "Why Did I Play Astra???"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/l4TD5786op4"
+ext_src = "https://fb.watch/yZCWWOUuIc/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-05-29
+title = "4 vs 1 Clutch For The Win"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/fefkR1pGI-I"
+ext_src = "https://fb.watch/yZCZBDnY7e/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-05-30
+title = "Chamber is So Good On Breeze"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/CFhfgcs5OBA"
+ext_src = "https://fb.watch/yZCZ_VDbMY/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-05-31
+title = "Chill Valo Game With Friends"
+role = ["video_editor"]
+type = ["long-form"]
+client = "P0land"
+category = ["gameplay"]
+fallback_src = "https://youtu.be/VfS_l4VMzHo"
+ext_src = "https://fb.watch/yZC_s27jra/"
+is_yt = false
+
+
+[[videos]]
+date = 2022-08-21
+title = "Minecraft But Everything Is Random"
+role = ["video_editor"]
+type = ["long-form"]
+client = "CosmicMJ"
+category = ["gameplay"]
+ext_src = "https://youtu.be/rU1OaW35iCM?si=N3p3H6jI7Fmn0ImK"
+is_yt = true
+
+
+[[videos]]
+date = 2022-09-04
+title = "Brookhaven Hide and Seek ONLY ONE COLOR"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/7zmWcqLYX10?si=ows-gyRdlPC7XeRr"
+is_yt = true
+
+
+[[videos]]
+date = 2022-09-06
+title = "Building 100M Mansion in Roblox"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/uaMe3syo35E?si=HIHGqDwabMP9Q8Qd"
+is_yt = true
+
+
+[[videos]]
+date = 2022-09-07
+title = "Bedwars Swords Evolve"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/XY34ItWobpw?si=vZx1IpRlWW9cQis6"
+is_yt = true
+
+
+[[videos]]
+date = 2022-09-08
+title = "Bedwars Anything We Draw Comes to Life"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/cBkHQ_I--mw?si=7R_gxP1cJtkUVLCz"
+is_yt = true
+
+
+[[videos]]
+date = 2022-09-11
+title = "Hide and Seek Cant Touch Blue"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/rwGcGyya4_U?si=RWaaPtWMIpVj01rM"
+is_yt = true
+
+
+[[videos]]
+date = 2022-09-11
+title = "Hide and Seek But Secret Agent"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/jZDGdNE7_7A?si=P5TkNjv-YOND3fYt"
+is_yt = true
+
+
+[[videos]]
+date = 2022-09-11
+title = "I Became OVERPOWERED in Minecraft Hardcore!"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Swidge"
+category = ["gameplay"]
+ext_src = "https://youtu.be/YYOEFMdBx5g?si=zuXGD4KSGWQNIuP_"
+is_yt = true
+
+
+[[videos]]
+date = 2022-09-12
+title = "Bedwars But Dying Gives OP Items"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/y_cg1PApNb4?si=RoCPQBHhN-jPUqaq"
+is_yt = true
+
+
+[[videos]]
+date = 2022-09-14
+title = "Build a Boat Funny Moments"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/oubC5jzRmRw?si=ylTjmhP1pXmF3JSv"
+is_yt = true
+
+
+[[videos]]
+date = 2022-09-16
+title = "Bedwars But You Can BUY Lucky Blocks"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/ayxnO5fBkx4?si=3Yr7kK9eCskdmdro"
+is_yt = true
+
+
+[[videos]]
+date = 2022-09-17
+title = "Making Rainbow Friends AVATARS in Roblox"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/dWQ-UlNDr28?si=eTg6CCNVA25hb0zp"
+is_yt = true
+
+
+[[videos]]
+date = 2022-09-19
+title = "MORE Custom Hearts"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/I_tmOsgDxew?si=0VTbxh8-rSLAioft"
+is_yt = true
+
+
+[[videos]]
+date = 2022-09-21
+title = "Money Tycoon"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/mESHh2knNGE?si=HpsEZggMz2hLcv7F"
+is_yt = true
+
+
+[[videos]]
+date = 2022-09-22
+title = "Rainbow Friends Hide and Seek"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/mrN3sGBYyYU?si=5x36xDOTk8OjH3FZ"
+is_yt = true
+
+
+[[videos]]
+date = 2022-09-23
+title = "Bedwars But Islands Give YOU Super Powers"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/6OfrFcVzYEc?si=El0OQ1DsADk-Rx75"
+is_yt = true
+
+
+[[videos]]
+date = 2022-09-24
+title = "Rainbow Friends Making Girlfriend Avatars"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/ERLYp2S5n30?si=vBS8BQcB02zyw45g"
+is_yt = true
+
+
+[[videos]]
+date = 2022-09-28
+title = "Bone Break Simulator"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/FBe_mjEz9e4?si=0M-9Ur4hki2RWWSk"
+is_yt = true
+
+
+[[videos]]
+date = 2022-09-29
+title = "Bedwars Genie Grants Wishes"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/rlYBE_R85yQ?si=SLFh_XFMt38JT_Cc"
+is_yt = true
+
+
+[[videos]]
+date = 2022-09-30
+title = "Livetopia Hide and Seek House Spots Only"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/Fd8TklFWpm0?si=IlZrqwHdNke-ycDD"
+is_yt = true
+
+
+[[videos]]
+date = 2022-10-01
+title = "Brookhaven Trucks ONLY Hide and Seek"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/xVLA_bnt5s8?si=1A72pON-xZoj0RIo"
+is_yt = true
+
+
+[[videos]]
+date = 2022-10-03
+title = "Roblox MAKING Mo Academy his own avatar"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/4lDGnLl2zCQ?si=1BQT-7BkCE8NgxnY"
+is_yt = true
+
+
+[[videos]]
+date = 2022-10-05
+title = "Brookhaven Hide and Seek But I CANT BREATH"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/41LvxCtI4_Q?si=LJ2Bb6lT2stvSJfC"
+is_yt = true
+
+
+[[videos]]
+date = 2022-10-06
+title = "Rich vs Poor Hide and Seek"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/9-pVTHT1t80?si=pexKvzTy4d0r2l2I"
+is_yt = true
+
+
+[[videos]]
+date = 2022-10-08
+title = "Bedwars Anything I Build Comes to Life 3"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/WFCuWeWZ3b8?si=ggxObC8JM6F5zNAL"
+is_yt = true
+
+
+[[videos]]
+date = 2022-10-13
+title = "Bedwars Remote Keyboard Cheats"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/qpr9kQCeMz4?si=4Kkb2ji3NBL4VmB_"
+is_yt = true
+
+
+[[videos]]
+date = 2022-10-14
+title = "Rainbow Friends Finding Every New Morph"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/b6LvZmChunQ?si=uxbulZzVReap2HoY"
+is_yt = true
+
+
+[[videos]]
+date = 2022-10-20
+title = "Transit Bus HIJACKED BY CRIMINALS!"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Mcsloth"
+category = ["gameplay"]
+ext_src = "https://youtu.be/yrPEjCalhto?si=7IE_4rVHyR3E9wRd"
+is_yt = true
+
+
+[[videos]]
+date = 2022-10-26
+title = "Brookhaven Hide and Seek FREE CANDY CAR"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/BqRudSNJOI4?si=r98WnC2mHcodZuIe"
+is_yt = true
+
+
+[[videos]]
+date = 2022-10-29
+title = "Escape POOH in Roblox"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/bZp1yisi3Z8?si=IA-dxIdzTApHQfuh"
+is_yt = true
+
+
+[[videos]]
+date = 2022-11-04
+title = "Bedwars Anything I Draw Comes to Life"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/4gZr-ShKYNE?si=1FTAQDtP0GalrN7z"
+is_yt = true
+
+
+[[videos]]
+date = 2022-11-10
+title = "ARSONIST Set Landlords House On FIRE!"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Mcsloth"
+category = ["gameplay"]
+ext_src = "https://youtu.be/YksFVMNDnAI?si=IqZGaIyzfEfQnCno"
+is_yt = true
+
+
+[[videos]]
+date = 2022-11-20
+title = "I Survived 100 Days in a BORDER in HARDCORE Minecraft!"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Swidge"
+category = ["gameplay"]
+ext_src = "https://youtu.be/5UYFEaNPOcE?si=kF1LhyaHYEuqryB9"
+is_yt = true
+
+
+[[videos]]
+date = 2022-11-26
+title = "Student Driver STOLE VEHICLE and CRASHED!"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Mcsloth"
+category = ["gameplay"]
+ext_src = "https://youtu.be/DWDT-1ocoBc?si=2FjAZfNKRuKxSRRt"
+is_yt = true
+
+
+[[videos]]
+date = 2022-12-23
+title = "Rainbow Friends Day 100"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/3VC0poyztuM?si=2fXDSIkPWWIi1YFP"
+is_yt = true
+
+
+[[videos]]
+date = 2022-12-24
+title = "Rainbow Friends RED SECRET ROOM"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/2VNsLNwvx0g?si=mJcbfnviqQVcaSFd"
+is_yt = true
+
+
+[[videos]]
+date = 2022-12-28
+title = "Rainbow Friends SECRET BLUE ROOM"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/FZxA7jgBAQI?si=MgVq1B5aTIbAjyXL"
+is_yt = true
+
+
+[[videos]]
+date = 2022-12-29
+title = "Neck Gets Bigger Every Second"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/LIvaG0OTDyM?si=Hj6oEXXw8ZBK1PrC"
+is_yt = true
+
+
+[[videos]]
+date = 2023-01-08
+title = "Playing as Mr Funny Dummy Prison Escape"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/udpAYv41xCc?si=9Rw7yaNNFXMf0uRe"
+is_yt = true
+
+
+[[videos]]
+date = 2023-01-08
+title = "Roblox Mini-Golf"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/1VBEVDjzlEo?si=IexJ4RvIXidkfHfx"
+is_yt = true
+
+
+[[videos]]
+date = 2023-01-10
+title = "Roblox COLLECT YOUR BODY"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/nIyTKX1Ty9Y?si=xEOPUceucL1ZR56l"
+is_yt = true
+
+
+[[videos]]
+date = 2023-01-10
+title = "Rainbow Friends RAINBOW GOD"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/eWp4HAstUHg?si=ufA0TBhng9oeTkoW"
+is_yt = true
+
+
+[[videos]]
+date = 2023-01-26
+title = "Rainbow Friends Hide and Seek SAM"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/ig2jaBFLxxE?si=MY2pBYjt2efQDf35"
+is_yt = true
+
+
+[[videos]]
+date = 2023-01-29
+title = "Rainbow Friends Hide and Seek Using FUTURE Morphs"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/a-rvWoBdiNY?si=pyaOypAPofVNS2yO"
+is_yt = true
+
+
+[[videos]]
+date = 2023-01-30
+title = "Using ONLY ONE COLOR in Rainbow Friends Hide and Seek"
+role = ["video_editor"]
+type = ["cut"]
+client = "Sunny and Melon"
+category = ["gameplay"]
+ext_src = "https://youtu.be/N2vwDYRX-Ys?si=BNGmqdgoLfLXMZFb"
+is_yt = true
+
+
+[[videos]]
+date = 2023-03-03
+title = "ROBLOX TYPE OR DIE"
+role = ["video_editor"]
+type = ["long-form"]
+client = "RyguyRocky"
+category = ["gameplay"]
+ext_src = "https://youtu.be/VEeR77q2Fsc?si=4DTBoFpX9EzrWImd"
+is_yt = true
+
+
+[[videos]]
+date = 2023-03-07
+title = "MAX LEVEL SWORD in Roblox!"
+role = ["video_editor"]
+type = ["long-form"]
+client = "RyguyRocky"
+category = ["gameplay"]
+ext_src = "https://youtu.be/qc1a3-IJGa0?si=Ua0jorBS2BsmNuLf"
+is_yt = true
+
+
+[[videos]]
+date = 2023-04-22
+title = "Doors Entities Play The Rooms"
+role = ["video_editor"]
+type = ["subtitles"]
+client = "DexterPlayz"
+category = ["gameplay"]
+ext_src = "https://youtu.be/9vxHa1hYuZU?si=Uy4Nq0hP7TPp0-6o"
+is_yt = true
+
+
+[[videos]]
+date = 2023-04-23
+title = "Roblox Day of Infamy"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/oaovlzxXjwQ?si=sudYBB1N3q6RURe1"
+is_yt = true
+
+
+[[videos]]
+date = 2023-04-27
+title = "Doors Entities Respond To Doors A.I."
+role = ["video_editor"]
+type = ["subtitles"]
+client = "DexterPlayz"
+category = ["gameplay"]
+ext_src = "https://youtu.be/5JN4Ho1czr0?si=xtTYSOmifT2yH4-F"
+is_yt = true
+
+
+[[videos]]
+date = 2023-04-29
+title = "Doors Entities Play Roblox Alone"
+role = ["video_editor"]
+type = ["subtitles"]
+client = "DexterPlayz"
+category = ["gameplay"]
+ext_src = "https://youtu.be/-1HR31lQo1k?si=JHhQma-4-uLZTrdB"
+is_yt = true
+
+
+[[videos]]
+date = 2023-04-30
+title = "Minecraft Napoleonic Wars"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/5tJiTQ-dRhU?si=bqqMub65YcdDghh5"
+is_yt = true
+
+
+[[videos]]
+date = 2023-05-04
+title = "Doors Entities React To Doors Memes!"
+role = ["video_editor"]
+type = ["subtitles"]
+client = "DexterPlayz"
+category = ["gameplay"]
+ext_src = "https://youtu.be/l5F04zFQdKg?si=abtN0KghcGmozKPN"
+is_yt = true
+
+
+[[videos]]
+date = 2023-05-05
+title = "Doors Entities Play Roblox"
+role = ["video_editor"]
+type = ["short-form"]
+client = "DexterPlayz"
+category = ["gameplay"]
+ext_src = "https://youtube.com/shorts/IvXwfXDgYs0?si=lmZfID1dX9wJahth"
+is_yt = true
+
+
+[[videos]]
+date = 2023-05-06
+title = "eBay Store Review"
+role = ["video_editor"]
+type = ["long-form"]
+client = "OneShop"
+category = ["promotional"]
+fallback_src = "https://youtu.be/R3HwUu3Ej3o"
+ext_src = "https://www.facebook.com/share/v/1Nx6XzQbNY/"
+is_yt = false
+
+
+[[videos]]
+date = 2023-05-12
+title = "Doors Entities Behaving Badly"
+role = ["video_editor"]
+type = ["short-form"]
+client = "DexterPlayz"
+category = ["gameplay"]
+ext_src = "https://youtube.com/shorts/OlTrKIsj_U4?si=ckvUBD6A8nZ4YxAW"
+is_yt = true
+
+
+[[videos]]
+date = 2023-05-13
+title = "Doors Entities Play Roblox!"
+role = ["video_editor"]
+type = ["subtitles"]
+client = "DexterPlayz"
+category = ["gameplay"]
+ext_src = "https://youtu.be/SZbRHLsoR_I?si=70sqgjrwaWEOYcVu"
+is_yt = true
+
+
+[[videos]]
+date = 2023-05-13
+title = "Minecraft Medieval Fort Tournament"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/cUD0KzwpflA?si=pWBxv9fdfzzjIQAf"
+is_yt = true
+
+
+[[videos]]
+date = 2023-05-14
+title = "Screech gets Bob Killed! ROBLOX DOORS"
+role = ["video_editor"]
+type = ["short-form"]
+client = "DexterPlayz"
+category = ["gameplay"]
+ext_src = "https://youtube.com/shorts/4EQLRpLBFYw?si=7DSti3tX4CbUy5_f"
+is_yt = true
+
+
+[[videos]]
+date = 2023-05-20
+title = "Roblox All Silent On The Western Front"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/XHH7F_o3F7U?si=KnrTete4irFM-0Cn"
+is_yt = true
+
+
+[[videos]]
+date = 2023-05-23
+title = "Doors Entities Respond To BAD OHIO Doors A.I."
+role = ["video_editor"]
+type = ["subtitles"]
+client = "DexterPlayz"
+category = ["gameplay"]
+ext_src = "https://youtu.be/VR9zbOBW-78?si=oqU_Gp0H46uhlI1V"
+is_yt = true
+
+
+[[videos]]
+date = 2023-05-24
+title = "Roblox Entrenched 7"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/hJdirAndUGg?si=8Fb4-cHL4sOkkPby"
+is_yt = true
+
+
+[[videos]]
+date = 2023-05-27
+title = "I Survived 100 Days as IRON MAN in Minecraft"
+role = ["video_editor"]
+type = ["partial", "cut"]
+client = "RyguyRocky"
+category = ["gameplay"]
+ext_src = "https://youtu.be/h1crnRYdSnQ?si=lfT4frKfTNimSw9O"
+is_yt = true
+
+
+[[videos]]
+date = 2023-05-27
+title = "Stolen Lawn Mower Sparks Massive Police Pursuit!"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Mcsloth"
+category = ["gameplay"]
+ext_src = "https://youtu.be/Tb5YTiCqbqA?si=cp9yTGdpL2K9i1mN"
+is_yt = true
+
+
+[[videos]]
+date = 2023-05-30
+title = "Minecraft Ancient Fort Tournament"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/CRtnFhY-Kss?si=3MwD3WQhkeHe656N"
+is_yt = true
+
+
+[[videos]]
+date = 2023-06-04
+title = "Roblox Multicrew Tank Combat 4"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/GyY0FKSPA3o?si=IQOoFxW5P2WdrztT"
+is_yt = true
+
+
+[[videos]]
+date = 2023-06-07
+title = "Roblox Entrenched 8"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/rEPWBEFNIjc?si=6bvnTCLiHXFph-p3"
+is_yt = true
+
+
+[[videos]]
+date = 2023-06-11
+title = "Minecraft East Asia War Simulation"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/7ppyLEpKv5g?si=YKj3UeZsYm_hgbWG"
+is_yt = true
+
+
+[[videos]]
+date = 2023-06-18
+title = "Roblox Masterblox"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/AKwi6je9Mnc?si=dm9NuQo-oBxznZU2"
+is_yt = true
+
+
+[[videos]]
+date = 2023-06-21
+title = "Roblox Guts & Blackpowder"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/KM3P3tykeX8?si=9jxj3WyW-TVNtJn0"
+is_yt = true
+
+
+[[videos]]
+date = 2023-06-28
+title = "Roblox Trench War"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/vGAb-oAoUqw?si=AnQn8gn_YnYhPh-Q"
+is_yt = true
+
+
+[[videos]]
+date = 2023-07-04
+title = "American Fort Tournament"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/vBhSXqRTxjA?si=D77r05Pz14gLyvm4"
+is_yt = true
+
+
+[[videos]]
+date = 2023-07-09
+title = "Roblox Entrenched 9"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/dBxlKk6ujL4?si=dNphMCUlT_wiuPlu"
+is_yt = true
+
+
+[[videos]]
+date = 2023-07-18
+title = "Roblox Entrenched 10"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/k9iEmz0f8O4?si=HNTD3pWMNCd8hrP7"
+is_yt = true
+
+
+[[videos]]
+date = 2023-07-24
+title = "Minecraft 1949 Operation Unthinkable"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/KTBQ1WcOTcA?si=sl7AYRBtkm22YW5Y"
+is_yt = true
+
+
+[[videos]]
+date = 2023-07-28
+title = "Roblox Entrenched 11"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/QUBabaixvSI?si=ln2TCTgL5XqXpkjo"
+is_yt = true
+
+
+[[videos]]
+date = 2023-08-06
+title = "Roblox Chaos Legion War"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/XClqRhRcagM?si=u8GaZK6MyZi5lV8b"
+is_yt = true
+
+
+[[videos]]
+date = 2023-08-31
+title = "Roblox Chaos Legion War 2"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/0Vgvyw7EAZ0?si=W9CVe5BHStUZFTVU"
+is_yt = true
+
+
+[[videos]]
+date = 2023-09-10
+title = "Roblox Entrenched 12"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/0BB6FGUsy-Q?si=x-XToOQYU-MxIRQw"
+is_yt = true
+
+
+[[videos]]
+date = 2023-09-16
+title = "Roblox Napoleonic Wars 6"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/HwtppcRx5D8?si=TVoTcrcm0hYD0jLF"
+is_yt = true
+
+
+[[videos]]
+date = 2023-09-22
+title = "Minecraft 15 Avatar Event"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/bT6bcCply90?si=euGm3UIT-OG68mea"
+is_yt = true
+
+
+[[videos]]
+date = 2023-09-25
+title = "Roblox BRM5 4"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/tx_G_-dkFew?si=LPKnGpRhX51GtCDd"
+is_yt = true
+
+
+[[videos]]
+date = 2023-11-06
+title = "Incredible Inventions"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/qtIThPZd9iM?si=3r0z_43MeepJjCsy"
+is_yt = true
+
+
+[[videos]]
+date = 2023-11-13
+title = "Most Futuristic Gadgets Ever"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/uwdVjYtRxX0?si=lSD1ZynZEg04Rvot"
+is_yt = true
+
+
+[[videos]]
+date = 2023-11-25
+title = "Satisfying Videos Of Workers"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/-qyzpa-UkmM?si=0Z5YOt-PPcFi4ZNp"
+is_yt = true
+
+
+[[videos]]
+date = 2023-12-04
+title = "Food Industry Machines"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/KyvE5cyyRlo?si=0UnFhEaCMYYp5eWv"
+is_yt = true
+
+
+[[videos]]
+date = 2023-12-04
+title = "Modern Agriculture Machines"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/LpmBXWKkoNM?si=4-S8mhTOmMmdKWg7"
+is_yt = true
+
+
+[[videos]]
+date = 2023-12-07
+title = "Satisfying Machines And Ingenious Tools"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/NIFlLnAvrZc?si=wvRbTP2O0TNW1nBN"
+is_yt = true
+
+
+[[videos]]
+date = 2023-12-13
+title = "Most Satisfying Restorations"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/51AHfI-p7nA?si=bunMuKXUs3ap9sRy"
+is_yt = true
+
+
+[[videos]]
+date = 2023-12-19
+title = "Powerful Industrial And Agricultural Machines"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/o2amGZL3Cco?si=lYvchmIOOnK9vbkM"
+is_yt = true
+
+
+[[videos]]
+date = 2023-12-27
+title = "Mass Production Food Factory"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/bR5uhkqt7OU?si=PmHqS0e7EAFZ531Z"
+is_yt = true
+
+
+[[videos]]
+date = 2024-01-01
+title = "Roblox Napoleonic Wars 7"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/8ZPvn-XExVg?si=tZYTFXhE_yPSjmvh"
+is_yt = true
+
+
+[[videos]]
+date = 2024-01-07
+title = "Mass Sweets Production Processes"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/e_mj-y7-3nk?si=fwAIrWRvFgycMPKc"
+is_yt = true
+
+
+[[videos]]
+date = 2024-01-12
+title = "Powerful Agricultural Machines"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/ftkylUrVvKw?si=aXp53RcMme8YRRQV"
+is_yt = true
+
+
+[[videos]]
+date = 2024-01-15
+title = "Powerful Industrial And Agricultural Machines #2"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/5iDePeCQ1Bw?si=EoxdvfPfwuzAgBjZ"
+is_yt = true
+
+
+[[videos]]
+date = 2024-01-19
+title = "Amazing Tools That Have Reached To A New Level"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/lJqAtEno9EY?si=DXDtXjurH9t4LmxT"
+is_yt = true
+
+
+[[videos]]
+date = 2024-02-03
+title = "Amazing Inventions"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/aTtDRXtg5Gc?si=sKN3w78dhi4bk06t"
+is_yt = true
+
+
+[[videos]]
+date = 2024-02-09
+title = "Satisfying Videos Of Fast Workers Doing Their Job Perfectly"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/82qVafgFMjE?si=WTQ9X-2p_7Q1XUCW"
+is_yt = true
+
+
+[[videos]]
+date = 2024-02-15
+title = "Top 100 Construction Tips And Hacks That Work Extremely Well"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/YrK5NS-hBvo?si=4BDTC6wijd6TDGzy"
+is_yt = true
+
+
+[[videos]]
+date = 2024-02-19
+title = "Amazing Life Hacks"
+role = ["video_editor"]
+type = ["long-form", "unpublished", "hidden"]
+client = "Soder"
+category = ["compilation"]
+is_yt = false
+
+
+[[videos]]
+date = 2024-02-29
+title = "Powerful Industrial Machines That Are At Another Level"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/y_TeO6kb7Sg?si=xCi58UPXWBkgmR5v"
+is_yt = true
+
+
+[[videos]]
+date = 2024-03-07
+title = "Amazing Inventions You Should See"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/m7lUbI3o7yo?si=avoFzG-T-RDvHc1p"
+is_yt = true
+
+
+[[videos]]
+date = 2024-03-10
+title = "Ingenious Construction Workers That Are At Another Level"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/pEpIRRq6DYQ?si=RjrY5kRNaiFF6pfG"
+is_yt = true
+
+
+[[videos]]
+date = 2024-03-16
+title = "Military Inventions That Are At Another Level"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/UaUkYhf0qkM?si=_PvpwArAkk1P2AHD"
+is_yt = true
+
+
+[[videos]]
+date = 2024-05-04
+title = "Ingenious Construction Workers That Are On Another Level"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/55E_W8DYz7g?si=Vu6fzWla4ouwq-wt"
+is_yt = true
+
+
+[[videos]]
+date = 2024-05-04
+title = "Satisfying Videos Of Fast And Skillful Workers Doing Their Job Perfectly"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/zAfU5m09yfg?si=Pj4ZLeJDvzYNEw91"
+is_yt = true
+
+
+[[videos]]
+date = 2024-05-04
+title = "Incredible Inventions That Can Save Your Life"
+role = ["video_editor"]
+type = ["long-form", "unpublished", "hidden"]
+client = "Soder"
+category = ["compilation"]
+is_yt = false
+
+
+[[videos]]
+date = 2024-05-09
+title = "30 Moments Filmed Seconds Before Disaster"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/vywzLWnjqZs?si=LVeDS_GKTx0wrHXv"
+is_yt = true
+
+
+[[videos]]
+date = 2024-05-16
+title = "Idiots In Cars You Wouldn't Believe If Not Filmed"
+role = ["video_editor"]
+type = ["long-form", "unpublished", "hidden"]
+client = "Soder"
+category = ["compilation"]
+is_yt = false
+
+
+[[videos]]
+date = 2024-05-21
+title = "50 Moments Filmed Seconds Before Disaster"
+role = ["video_editor"]
+type = ["long-form", "unpublished", "hidden"]
+client = "Soder"
+category = ["compilation"]
+is_yt = false
+
+
+[[videos]]
+date = 2024-05-26
+title = "Luckiest People Survive Close Calls Caught On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/7cengR14t9M?si=5LCCul0eHmqw4wI4"
+is_yt = true
+
+
+[[videos]]
+date = 2024-05-28
+title = "Most Unbelievable Aviation Moments Caught On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/nD1MsGxXQug?si=46AjSVgC5Kxao2Vu"
+is_yt = true
+
+
+[[videos]]
+date = 2024-06-07
+title = "Real Life Superheroes Caught On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/vdwT8uNvWRA?si=aI-lsvNrsLysnC5E"
+is_yt = true
+
+
+[[videos]]
+date = 2024-06-13
+title = "80 Times Mother Nature Got Angry On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/y7g3mACyP_I?si=qnQAwQBvNP5sLtUy"
+is_yt = true
+
+
+[[videos]]
+date = 2024-06-17
+title = "75 Unbelievable Aviation Moments Caught On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/5lWuEzZ85gU?si=av1andAMW2Hjnp07"
+is_yt = true
+
+
+[[videos]]
+date = 2024-06-27
+title = "Most Unbelievable Aviation Moments Ever Caught On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/EM5I_l9s6jg?si=BAEsXg2Nw4IxbwkC"
+is_yt = true
+
+
+[[videos]]
+date = 2024-07-02
+title = "80 Biggest Ship Collisions And Mistakes Caught On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/WzBCtAgeVpQ?si=FpN0mOftyIjnZkPe"
+is_yt = true
+
+
+[[videos]]
+date = 2024-07-18
+title = "Idiots In Boats On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/yqf0LjDftkw?si=3uPM_Wv77T7ZB5A8"
+is_yt = true
+
+
+[[videos]]
+date = 2024-08-08
+title = "80 Moments Filmed Seconds Before Disaster"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/hw2BO4dUYzY?si=N5eSkMSw1jzI72UZ"
+is_yt = true
+
+
+[[videos]]
+date = 2024-08-08
+title = "Animals That Asked People For Help And Kindness Caught On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/hH-OStckOpc?si=UqbaJ5RTN44ADHSy"
+is_yt = true
+
+
+[[videos]]
+date = 2024-08-22
+title = "Idiots In Boats Caught On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/V1YiC9MXDkg?si=7_tPRNiaK7nCEen0"
+is_yt = true
+
+
+[[videos]]
+date = 2024-09-01
+title = "Real Life Heroes Caught On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/iwJNbS7f0nY?si=bB6q7vrjsXmCIqcR"
+is_yt = true
+
+
+[[videos]]
+date = 2024-09-01
+title = "75 Moments Filmed Second Before Disaster"
+role = ["video_editor"]
+type = ["long-form", "unpublished", "hidden"]
+client = "Soder"
+category = ["compilation"]
+is_yt = false
+
+
+[[videos]]
+date = 2024-09-08
+title = "Hero Animals That Saved Human Lives"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/5MOVJIRMNBY?si=Cv_vYpVtxor6jX8N"
+is_yt = true
+
+
+[[videos]]
+date = 2024-10-11
+title = "75 Scariest Attractions In The World"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/TrnItnN3iXc?si=efk7TnsKmZIoV5Xa"
+is_yt = true
+
+
+[[videos]]
+date = 2024-10-11
+title = "Luckiest People Ever Caught On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/mxhymVMx3QA?si=4xJrFHFzwV6xt5sw"
+is_yt = true
+
+
+[[videos]]
+date = 2024-10-11
+title = "Incredible Ingenious Hidden Rooms And Secret Furniture"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/W7kynENqmC8?si=o5SmIsX4r6dpPFJp"
+is_yt = true
+
+
+[[videos]]
+date = 2024-10-14
+title = "Biggest Ship Collisions And Mistakes Caught On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/QVTxLnysG2Y?si=KhX1rLIs_MAX0Wes"
+is_yt = true
+
+
+[[videos]]
+date = 2024-10-21
+title = "Unbelievable Aviation Moments Caught On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/JkhCaAj-Vqc?si=BlOAG2AlChZoK0vW"
+is_yt = true
+
+
+[[videos]]
+date = 2024-10-30
+title = "75 Moments Filmed Seconds Before Disaster"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/iPLtKIS85R8?si=k3DXVmkhnT8awRiT"
+is_yt = true
+
+
+[[videos]]
+date = 2024-11-19
+title = "80 Moments Filmed Seconds Before Disaster"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+is_yt = false
+
+
+[[videos]]
+date = 2024-12-01
+title = "Incredible Moments Caught On CCTV Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/n7JG2nUbBOw?si=Z0hkcnbYzLzNXuRZ"
+is_yt = true
+
+
+[[videos]]
+date = 2024-12-21
+title = "Unbelievable Aviation Moments Caught On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/-D_jtk0QyU8?si=kAV6VaJxlaJQPdNl"
+is_yt = true
+
+
+[[videos]]
+date = 2025-01-20
+title = "Incredible Moments Caught On CCTV Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/kR4HnuOwDws?si=F4R1napkXksMGaC8"
+is_yt = true
+
+
+[[videos]]
+date = 2025-01-21
+title = "Worst Neighbors From Hell Caught On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/osvvkgrnw-s?si=4NJaeqvbjdpqswHw"
+is_yt = true
+
+
+[[videos]]
+date = 2025-02-02
+title = "75 Scariest Attractions In The World"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/lyZ_2JYmfks?si=_jiAct4l45DxDtol"
+is_yt = true
+
+
+[[videos]]
+date = 2025-02-19
+title = "75 Incredible Moments Caught On Dash Cam"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/TwkJizxpIQs?si=dVVELavmaZq1l3W1"
+is_yt = true
+
+
+[[videos]]
+date = 2025-02-26
+title = "Incredible Road Moments Caught On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/BHdPfX1Nd08?si=pMtfQDWelqY-K6E1"
+is_yt = true
+
+
+[[videos]]
+date = 2025-03-24
+title = "75 Scariest Attractions In The World"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/PqcpxNrqxwU?si=1VMHxeYxzsmTyG6N"
+is_yt = true
+
+
+[[videos]]
+date = 2025-04-10
+title = "Best Bad Parking Revenges Caught On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/maBA2IFtzyA?si=B-7gxo6Ej3Nc1QI8"
+is_yt = true
+
+
+[[videos]]
+date = 2025-04-13
+title = "WW2 DDay"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Plastic Scot"
+category = ["gameplay"]
+ext_src = "https://youtu.be/i3sWlTX-qdM?si=mTfpjL3syKh_UCGz"
+is_yt = true
+
+
+[[videos]]
+date = 2025-04-26
+title = "Drones Camera Caught Something Incredible"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/75Jk8sbd5G4?si=ETbn7DFVE1lEAjQI"
+is_yt = true
+
+
+[[videos]]
+date = 2025-05-15
+title = "Incredible Moments Caught On CCTV Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/-E3UwqEZC58?si=zLQWaMeQWGlfOiZR"
+is_yt = true
+
+
+[[videos]]
+date = 2025-05-27
+title = "Incredible Moments Caught On CCTV Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/v6soRgOIIkE?si=-5tbiL0teI_W38rG"
+is_yt = true
+
+
+[[videos]]
+date = 2025-06-11
+title = "Incredible Safari Moments Caught On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/OiIUUwwVEs8?si=g_PSyX3nJiqVbvUI"
+is_yt = true
+
+
+[[videos]]
+date = 2025-06-21
+title = "Moments Filmed Seconds Before Disaster"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/4FxmavhTkoU?si=orvLytbTE4ro8xus"
+is_yt = true
+
+
+[[videos]]
+date = 2025-07-08
+title = "Best Bad Parking Revenges Caught On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://youtu.be/vTrbzoFgKeU?si=LWNaFNUEDQbne6qZ"
+is_yt = true
+
+
+[[videos]]
+date = 2025-08-11
+title = "Worst Neighbors From Hell Caught On Camera"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://www.youtube.com/watch?v=16QROweNjvM"
+is_yt = true
+
+
+[[videos]]
+date = 2025-08-31
+title = "Caught in 4K! Funniest Security Camera Fails"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://www.youtube.com/watch?v=lnn5LXhvA7s&ab_channel=DuckMechanic"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-23
+title = "75 Moments Filmed Seconds Before Disaster"
+role = ["video_editor"]
+type = ["long-form"]
+client = "Soder"
+category = ["compilation"]
+ext_src = "https://www.youtube.com/watch?v=HErjTAvQKPU"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-22
+title = "Reckless Karen Gets Confronted!"
+role = ["video_editor"]
+type = ["short-form"]
+client = "DailyBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/O1iVTGWGEA0"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-17
+title = "Biker Proves That He Is A Hero!"
+role = ["video_editor"]
+type = ["short-form"]
+client = "DailyBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/p32LU0DviqU"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-19
+title = "Biker Crashes Into Deer And Almost D*es!"
+role = ["video_editor"]
+type = ["short-form"]
+client = "DailyBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/8r9ghMhb7DI"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-21
+title = "Biker Protects Poor Woman!"
+role = ["video_editor"]
+type = ["short-form"]
+client = "DailyBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/yVLEUI-hauM"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-22
+title = "Biker Has An Extreme Closecall! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "Viral Biker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/NipRwl9h9zw"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-21
+title = "Biker Gets Caught By A Cop! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "Viral Biker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/vPAj-77Xpkk"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-25
+title = "Biker Experiences Insane Close Call! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "Viral Biker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/hYTIYa5Vzkk"
+is_yt = true
+
+
+[[videos]]
+date = 2025-08-20
+title = "Biker Tries To Lie To Cop! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/Kot6Oj-qFgc"
+is_yt = true
+
+
+[[videos]]
+date = 2025-08-17
+title = "Karen Hit And Run Attempt Backfires! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/0qo1nO-aOZU"
+is_yt = true
+
+
+[[videos]]
+date = 2025-08-15
+title = "Biker Does The Stupidest Thing Ever! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/C8d03kppnCs"
+is_yt = true
+
+
+[[videos]]
+date = 2025-08-19
+title = "Hit And Run Driver Has Crazy Excuse! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/5BjByJ2Mv1E"
+is_yt = true
+
+
+[[videos]]
+date = 2025-08-21
+title = "Crazy Road Rager Fights Biker! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/G6sQI-md-Ac"
+is_yt = true
+
+
+[[videos]]
+date = 2025-08-23
+title = "Cop Loses It Over Biker! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/floeFm40ov8"
+is_yt = true
+
+
+[[videos]]
+date = 2025-08-22
+title = "Most Terrifying Road Rage Incident! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/QBRXAMjI2H4"
+is_yt = true
+
+
+[[videos]]
+date = 2025-08-24
+title = "Funniest Cop Encounter Ever! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/9Q2KYgXEy64"
+is_yt = true
+
+
+[[videos]]
+date = 2025-08-18
+title = "Thief Steals Bike Chase Ends Lucky! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/qj8MTzXnRcY"
+is_yt = true
+
+
+[[videos]]
+date = 2025-08-29
+title = "Biker Escapes Traffic Stop! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/_hdICQF1cZs"
+is_yt = true
+
+
+[[videos]]
+date = 2025-08-25
+title = "Shocking Encounter In The Elevator! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/4g7AbwEEzvM"
+is_yt = true
+
+
+[[videos]]
+date = 2025-08-26
+title = "Karen Freaks Out In A Park! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/LqKLWBDoNCA"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-01
+title = "Stolen Bike Spotted During Ride Out! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/AzV3qjIWu38"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-02
+title = "Biker Encounters Angry Harley Crew! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/iuj0QJSJoIw"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-04
+title = "Biker Gets Rear Ended By Impatient Driver! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/hfRTlddsTXg"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-05
+title = "Biker Gets Hit With Bad Surprise! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/KhkBDUS99HY"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-03
+title = "Biker Gets Rear Ended By Karen! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/jm00kAo1DwM"
+is_yt = true
+
+
+[[videos]]
+date = 2025-08-31
+title = "True Love Story With Cute Girl! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/tgmreIg-in8"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-24
+title = "Biker Brings Raccoon To Cops! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/Kjj0qa8hDDo"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-21
+title = "Careless Driver Gets Instant Justice! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/J7fjkeaY1fA"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-19
+title = "Police Helicopter Chase Goes Wrong! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/G89WibXUb40"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-20
+title = "Biker Road Rage With Urus Driver! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/-5bxAs13pU8"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-22
+title = "Reckless Karen Blames Biker! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/6AoPhJNhs6s"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-25
+title = "Biker Crashes While Lane-Splitting! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/jrxeJcGNLcI"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-06
+title = "Angry Driver Gets Instant Karma! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/TmDjI-ZV8us"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-09
+title = "Reckless Karen Gets Instant Karma! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/UUamc44RPjE"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-09
+title = "Biker Kid Encounters Craziest Karen! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/kLAMccEnqic"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-07
+title = "Biker Loses His Memories After Crashing! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/JCxtq3c7UV4"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-16
+title = "Biker Gets Arrested In Front Of His Girl! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/0BegjPt_Z0E"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-10
+title = "BMW Driver Almost Wrecks Biker! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/fw3q50tOWBE"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-07
+title = "Driver Attempts To Run Biker Over! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/IPZFb7ZSDMo"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-11
+title = "Angry Man Jumps In Front Of Biker! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/f1Tifb-K-9k"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-10
+title = "Biker Rides Inside Of His Own School! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/3iW9HXa5dDs"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-08
+title = "Biker Crashes Into Cyclist And Gets Blamed! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/p2CX3k8WMlg"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-16
+title = "Biker Gets Furious At Van Driver! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/4wwGgAa9ekI"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-15
+title = "Biker Gets Into Crash On The Highway! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/ZYye5yyi1ig"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-11
+title = "The Worst Police Officer Ever! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/BKerLVHpR4Y"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-21
+title = "Biker Gets Confronted By The Police! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/-IQd1aBsohs"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-18
+title = "Bike Crash Changes Girls Life! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/e7zUQzSmshU"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-23
+title = "The Most Extreme Road Rage! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/acfnxVv2S2I"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-24
+title = "Bikers Friend Crashes Because Of Reckless Driver! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/E3wg_qwLHYQ"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-27
+title = "Biker Becomes Victim Of Police! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/V01C_ByuKOk"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-13
+title = "Biker Gets Chased Because Of A Wheelie! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/TyLbVyew0dg"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-14
+title = "Angry Driver Gets Hilarious Karma! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/2BImkF3GiVM"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-12
+title = "Woman Attempts To M*rder Biker! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/bNZFPzIlOFk"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-28
+title = "Road Rage Escalates Quickly! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/zmGQUMKCVoE"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-12
+title = "Woman Causes Massive Crash! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/TuzU2hYfifU"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-14
+title = "Trying To Impress Girls Goes Wrong! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/TKHoYGQXZVM"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-26
+title = "Biker Has An Insane Closecall! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/52mNJCj8RvI"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-22
+title = "Most Heartbreaking Biker Moment! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/xtP3eu2aOjI"
+is_yt = true
+
+
+[[videos]]
+date = 2025-09-23
+title = "The Typical American Road Rager! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/C4Fu33aMh2Q"
+is_yt = true
+
+
+[[videos]]
+date = 2025-08-30
+title = "The Most Insane Biker! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://www.youtube.com/shorts/WL1XEwYUqkM"
+is_yt = true
+
+
+[[videos]]
+date = 2025-10-06
+title = "The Funniest Crash Reaction Ever! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://youtube.com/shorts/Nx3-HKSMQic"
+is_yt = true
+
+
+[[videos]]
+date = 2025-10-07
+title = "Riding In A Pool Goes Wrong! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://youtube.com/shorts/rTG1jEVBjTQ"
+is_yt = true
+
+
+[[videos]]
+date = 2025-10-09
+title = "Biker Gets Instant Karma For lane filtering! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://youtube.com/shorts/IbKKXam0oJI"
+is_yt = true
+
+
+[[videos]]
+date = 2025-10-10
+title = "Expensive Crash Ends In Tears! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://youtube.com/shorts/mpa4gkoBNy0"
+is_yt = true
+
+
+[[videos]]
+date = 2025-10-11
+title = "Biker With Broken Heart Makes Huge Mistake! "
+role = ["video_editor"]
+type = ["short-form"]
+client = "StreetBiker"
+category = ["irl_content"]
+ext_src = "https://youtube.com/shorts/vPpVRLFrETU"
+is_yt = true
