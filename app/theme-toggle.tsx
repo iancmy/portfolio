@@ -4,7 +4,7 @@ import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
-import { NavbarButton } from "./ui/resizable-navbar";
+import { NavbarButton } from "@/components/ui/resizable-navbar";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();

@@ -7,12 +7,12 @@ import Link from "next/link";
 import TypewriterTitle from "@/components/ui/type-writer";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import ClientsCard from "@/components/clients-card";
-import TotalViews from "@/components/total-views-card";
-import TotalLikes from "@/components/total-likes-card";
+import ClientsCard from "./clients-card";
+import TotalViews from "./total-views-card";
+import TotalLikes from "./total-likes-card";
 import { AnimatedNumber } from "@/components/ui/animated-number";
 import { useQuery } from "@tanstack/react-query";
-import ActivityGraph from "@/components/activity-graph";
+import ActivityGraph from "./activity-graph";
 import { Film, SquareArrowOutUpRight } from "lucide-react";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { fetchPortfolio, Portfolio } from "@/lib/api";
@@ -29,20 +29,15 @@ export default function Home() {
   const kofiLight = "https://storage.ko-fi.com/cdn/kofi1.png?v=6";
   const kofiDark = "https://storage.ko-fi.com/cdn/kofi3.png?v=6";
 
-  const test = useQuery<Portfolio>({
-    queryKey: ["portfolio", "test"],
-    queryFn: fetchPortfolio,
-    initialData: new Portfolio(),
-  });
   const ytCountQ = useQuery<Portfolio, Error, number>({
-    queryKey: ["portfolio", "yt", "count"],
+    queryKey: ["portfolio"],
     queryFn: fetchPortfolio,
     initialData: new Portfolio(),
     select: (portf) => portf.yt.count,
   });
 
   const ytChannelsQ = useQuery<Portfolio, Error, YtClient[]>({
-    queryKey: ["portfolio", "yt", "channels"],
+    queryKey: ["portfolio"],
     queryFn: fetchPortfolio,
     initialData: new Portfolio(),
     select: (portf) => portf.yt.clients as YtClient[],
@@ -57,6 +52,7 @@ export default function Home() {
           src="/images/hero.jpg"
           alt="dom-editing"
           fill
+          sizes="calc(2/3 * 100%)"
         />
       </Card>
       <h1 className="flex gap-[0.25em] text-center text-7xl not-lg:text-4xl font-medium font-title">

@@ -18,6 +18,10 @@ import {
   DropdownMenuTrigger,
 } from "./dropdown-menu";
 import { ChevronDown } from "lucide-react";
+import { Status, StatusIndicator, StatusLabel } from "../kibo-ui/status";
+import { useQuery } from "@tanstack/react-query";
+import { ChatStatus } from "@/lib/types/chat";
+import { checkChatStatus } from "@/lib/api";
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -33,6 +37,7 @@ interface NavBodyProps {
 interface NavItem {
   name: string;
   link?: string;
+  asNewTab?: boolean;
   children?: NavItem[];
 }
 
@@ -90,9 +95,9 @@ export const ResizableNavbar = ({ children, className }: NavbarProps) => {
         React.isValidElement(child) && typeof child.type !== "string"
           ? React.cloneElement(
               child as React.ReactElement<{ visible?: boolean }>,
-              { visible }
+              { visible },
             )
-          : child
+          : child,
       )}
     </motion.div>
   );
@@ -120,16 +125,16 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       className={cn(
         "relative z-[60] mx-auto hidden w-full max-w-5xl flex-row items-center justify-between self-start rounded-3xl px-4 py-2 lg:flex transition-colors duration-500",
         visible ? "bg-secondary/80" : "bg-transparent",
-        className
+        className,
       )}
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child) && typeof child.type !== "string"
           ? React.cloneElement(
               child as React.ReactElement<{ visible?: boolean }>,
-              { visible }
+              { visible },
             )
-          : child
+          : child,
       )}
     </motion.div>
   );
@@ -143,7 +148,7 @@ export const NavItems = ({ items, className, visible }: NavItemsProps) => {
       onMouseLeave={() => setHovered(null)}
       className={cn(
         "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-lg font-medium lg:flex lg:space-x-2",
-        className
+        className,
       )}
     >
       {items.map((item, idx) => {
@@ -153,7 +158,7 @@ export const NavItems = ({ items, className, visible }: NavItemsProps) => {
               <DropdownMenuTrigger
                 onMouseEnter={() => setHovered(idx)}
                 className={cn(
-                  "relative px-4 py-2 transition duration-500 text-foreground cursor-pointer"
+                  "relative px-4 py-2 transition duration-500 text-foreground cursor-pointer",
                 )}
               >
                 {hovered === idx && (
@@ -161,7 +166,7 @@ export const NavItems = ({ items, className, visible }: NavItemsProps) => {
                     layoutId="hovered"
                     className={cn(
                       "absolute inset-0 h-full w-full rounded-3xl",
-                      visible ? "bg-background/20" : "bg-accent/20"
+                      visible ? "bg-background/20" : "bg-accent/20",
                     )}
                   />
                 )}
@@ -175,10 +180,11 @@ export const NavItems = ({ items, className, visible }: NavItemsProps) => {
                   <DropdownMenuItem key={`menu-item-${idx}`} asChild>
                     <Link
                       className={cn(
-                        "relative px-4 py-2 transition duration-500 text-foreground cursor-pointer"
+                        "relative px-4 py-2 transition duration-500 text-foreground cursor-pointer",
                       )}
                       key={`link-${idx}`}
                       href={item.link || ""}
+                      target={item?.asNewTab ? "_blank" : "_self"}
                     >
                       <span className="flex gap-2 items-center justify-center relative z-20">
                         <span>{item.name}</span>
@@ -195,7 +201,7 @@ export const NavItems = ({ items, className, visible }: NavItemsProps) => {
           <Link
             onMouseEnter={() => setHovered(idx)}
             className={cn(
-              "relative px-4 py-2 transition duration-500 text-foreground"
+              "relative px-4 py-2 transition duration-500 text-foreground",
             )}
             key={`link-${idx}`}
             href={item.link || ""}
@@ -205,7 +211,7 @@ export const NavItems = ({ items, className, visible }: NavItemsProps) => {
                 layoutId="hovered"
                 className={cn(
                   "absolute inset-0 h-full w-full rounded-3xl",
-                  visible ? "bg-background/20" : "bg-accent/20"
+                  visible ? "bg-background/20" : "bg-accent/20",
                 )}
               />
             )}
@@ -240,16 +246,16 @@ export const MobileNav = ({
       className={cn(
         "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between gap-4 px-4 py-2 lg:hidden transition duration-500 backdrop-blur-md",
         visible ? "bg-secondary/80" : "bg-transparent",
-        className
+        className,
       )}
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child) && typeof child.type !== "string"
           ? React.cloneElement(
               child as React.ReactElement<{ visible?: boolean }>,
-              { visible }
+              { visible },
             )
-          : child
+          : child,
       )}
     </motion.div>
   );
@@ -263,7 +269,7 @@ export const MobileNavHeader = ({
     <div
       className={cn(
         "flex w-full flex-row items-center justify-between",
-        className
+        className,
       )}
     >
       {children}
@@ -293,7 +299,7 @@ export const MobileNavMenu = ({
           className={cn(
             "absolute inset-x-0 top-16 z-50 flex w-full flex-col rounded-b-3xl items-start justify-start gap-4 px-8 py-8",
             visible ? "bg-secondary/80" : "bg-background/80",
-            className
+            className,
           )}
           onMouseLeave={() => setIsOpen(false)}
         >
@@ -352,22 +358,41 @@ export const MobileNavToggle = ({
 };
 
 export const NavbarLogo = () => {
+  const chatStatusQ = useQuery<ChatStatus>({
+    queryKey: ["chat", "status"],
+    queryFn: checkChatStatus,
+    staleTime: 0,
+    refetchInterval: 30 * 1000, // every 30s
+    refetchIntervalInBackground: true,
+    refetchOnWindowFocus: true,
+    initialData: {status: "offline"}
+  })
+
   return (
-    <Link
-      href="/"
-      className="relative z-20 mr-4 flex items-center space-x-4 px-2 py-1"
-    >
-      <Image
-        src="/images/dom-pixel.png"
-        alt="dom-logo"
-        width={40}
-        height={40}
-        className="drop-shadow-xs"
-      />
-      <span className="font-[family-name:var(--font-title)] text-2xl font-medium text-foreground">
-        iancmy
-      </span>
-    </Link>
+    <div className="relative">
+      <Link
+        href="/"
+        className="relative z-20 mr-4 flex items-center space-x-4 px-2 py-1"
+      >
+        <Image
+          src="/images/dom-pixel.png"
+          alt="dom-logo"
+          width={40}
+          height={40}
+          className="drop-shadow-xs"
+        />
+        <span className="font-title text-2xl font-medium text-foreground">
+          iancmy
+        </span>
+        <Status
+          className="rounded-full text-xs absolute top-3 right-0.5 pointer-events-none"
+          status={chatStatusQ.data.status}
+          variant="none"
+        >
+          <StatusIndicator />
+        </Status>
+      </Link>
+    </div>
   );
 };
 

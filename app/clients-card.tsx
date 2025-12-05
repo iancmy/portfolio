@@ -10,10 +10,10 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { Skeleton } from "./ui/skeleton";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { Avatar } from "./ui/avatar";
-import { AnimatedNumber } from "./ui/animated-number";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Avatar } from "@/components/ui/avatar";
+import { AnimatedNumber } from "@/components/ui/animated-number";
 import { Eye, Heart, SquareArrowOutUpRight, Users, Video } from "lucide-react";
 import Link from "next/link";
 import { fetchPortfolio, Portfolio } from "@/lib/api";
@@ -21,14 +21,11 @@ import { shuffle } from "@/lib/utils";
 
 export default function ClientsCard() {
   const ytChannelsQ = useQuery<Portfolio, Error, YtClient[]>({
-    queryKey: ["portfolio", "yt", "channels"],
+    queryKey: ["portfolio"],
     queryFn: fetchPortfolio,
     refetchOnWindowFocus: false,
-    initialData: new Portfolio(),
     select: (portf) => shuffle(portf.yt.clients) as YtClient[]
   });
-
-  console.log(ytChannelsQ.data)
 
   return (
     <Carousel
@@ -43,7 +40,7 @@ export default function ClientsCard() {
       ]}
     >
       <CarouselContent>
-        {!ytChannelsQ.isLoading ? ytChannelsQ.data.map((client, i) => {
+        {!ytChannelsQ.isLoading ? ytChannelsQ.data?.map((client, i) => {
               return (
                 <CarouselItem
                   key={`${i}-${client.name}`}

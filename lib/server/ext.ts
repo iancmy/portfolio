@@ -1,4 +1,5 @@
 import "server-only";
+import { WebClient } from "@slack/web-api";
 
 export namespace GoogleApi {
   const BASE_URL = "https://www.googleapis.com";
@@ -13,6 +14,9 @@ export namespace GoogleApi {
       description: string;
       thumbnail: string;
     };
+    contentDetails: {
+      duration: string;
+    }
     statistics: {
       viewCount: string;
       likeCount: string;
@@ -30,115 +34,163 @@ export namespace GoogleApi {
     static URL = BASE_URL + "/youtube/v3";
 
     static async channel(id: string) {
-      const url = new URL(`${this.URL}/channels`);
-      url.searchParams.append("key", API_KEY);
-      url.searchParams.append("part", "snippet, statistics");
-      url.searchParams.append("id", id);
-
-      const res = await (await fetch(url.toString())).json();
-
-      if (res.items.length < 1) return Promise.reject();
-
-      const data = res.items[0];
-
-      return {
-        id: data.id,
-        channel_username: data.snippet.customUrl,
-        statistics: data.statistics,
-        snippet: {
-          ...data.snippet,
-          thumbnail:
-            data.snippet.thumbnails?.maxres?.url ||
-            data.snippet.thumbnails?.standard?.url ||
-            data.snippet.thumbnails?.high?.url ||
-            data.snippet.thumbnails?.medium?.url ||
-            data.snippet.thumbnails?.default?.url ||
-            "",
-        },
-      } as YtApiChannelData;
+      const results = await this.channels([id]);
+      return results[0] || null;
     }
 
-    static channels(ids: string[]) {
-      return Promise.all(ids.map(channelId => this.channel(channelId)))
+    static async channels(ids: string[]) {
+      if (ids.length === 0) return [];
+
+      const MAX_IDS_PER_REQUEST = 50;
+      const uniqueIds = Array.from(new Set(ids));
+      const promises: Promise<YtApiChannelData[]>[] = [];
+
+      for (let i = 0; i < uniqueIds.length; i += MAX_IDS_PER_REQUEST) {
+        const batchIds = uniqueIds.slice(i, i + MAX_IDS_PER_REQUEST);
+        const url = new URL(`${this.URL}/channels`);
+        url.searchParams.append("key", API_KEY);
+        url.searchParams.append("part", "snippet, contentDetails, statistics");
+        url.searchParams.append("id", batchIds.join(","));
+
+        promises.push(
+          (async () => {
+            const res = await fetch(url.toString());
+
+            if (!res.ok) {
+              console.error(
+                `YouTube API Error: ${res.status} ${res.statusText}`,
+              );
+              return [];
+            }
+
+            const data = await res.json();
+            if (!data.items) return [];
+
+            return data.items.map((item: any) => ({
+              id: item.id,
+              channel_username: item.snippet.customUrl,
+              statistics: item.statistics,
+              snippet: {
+                ...item.snippet,
+                thumbnail:
+                  item.snippet.thumbnails?.maxres?.url ||
+                  item.snippet.thumbnails?.standard?.url ||
+                  item.snippet.thumbnails?.high?.url ||
+                  item.snippet.thumbnails?.medium?.url ||
+                  item.snippet.thumbnails?.default?.url ||
+                  "",
+              },
+            })) as YtApiChannelData[];
+          })(),
+        );
+      }
+      const allResults = await Promise.all(promises);
+      return allResults.flat();
     }
 
     static async video(id: string) {
-      const url = new URL(`${this.URL}/videos`);
-      url.searchParams.append("key", API_KEY);
-      url.searchParams.append("part", "snippet, statistics");
-      url.searchParams.append("id", id);
-
-      const res = await (await fetch(url)).json();
-
-      if (res.items.length < 1) return null;
-
-      const data = res.items[0];
-
-      return {
-        id: data.id,
-        statistics: data.statistics,
-        snippet: {
-          ...data.snippet,
-          thumbnail:
-            data.snippet.thumbnails?.maxres?.url ||
-            data.snippet.thumbnails?.standard?.url ||
-            data.snippet.thumbnails?.high?.url ||
-            data.snippet.thumbnails?.medium?.url ||
-            data.snippet.thumbnails?.default?.url ||
-            "",
-        },
-      } as YtApiVideoData;
+      const results = await this.videos([id]);
+      return results[0] || null;
     }
 
     static async videos(ids: string[]) {
+      if (ids.length === 0) return [];
+
       const MAX_IDS_PER_REQUEST = 50;
       const promises: Promise<YtApiVideoData[]>[] = [];
 
       for (let i = 0; i < ids.length; i += MAX_IDS_PER_REQUEST) {
         const batchIds = ids.slice(i, i + MAX_IDS_PER_REQUEST);
-        const allIds = batchIds.join(",");
-
         const url = new URL(`${this.URL}/videos`);
         url.searchParams.append("key", API_KEY);
-        url.searchParams.append("part", "snippet, statistics");
-        url.searchParams.append("id", allIds);
+        url.searchParams.append("part", "snippet, contentDetails, statistics");
+        url.searchParams.append("id", batchIds.join(","));
 
-        const batchPromise = (async () => {
-            const res = await (await fetch(url)).json();
+        promises.push(
+          (async () => {
+            const res = await fetch(url.toString());
 
-            if (res.error) {
+            if (!res.ok) {
+              console.error(
+                `YouTube API Error: ${res.status} ${res.statusText}`,
+              );
               return [];
             }
 
-            const batchResult: YtApiVideoData[] = [];
+            const data = await res.json();
+            if (!data.items) return [];
 
-            for (const data of res.items) {
-              const ytData = {
-                id: data.id,
-                statistics: data.statistics,
-                snippet: {
-                  ...data.snippet,
-                  thumbnail:
-                    data.snippet.thumbnails?.maxres?.url ||
-                    data.snippet.thumbnails?.standard?.url ||
-                    data.snippet.thumbnails?.high?.url ||
-                    data.snippet.thumbnails?.medium?.url ||
-                    data.snippet.thumbnails?.default?.url ||
-                    "",
-                },
-              } as YtApiVideoData;
-              batchResult.push(ytData);
-            }
-            return batchResult;
-        })();
-
-        promises.push(batchPromise);
+            return data.items.map((item: any) => ({
+              id: item.id,
+              statistics: item.statistics,
+              contentDetails: item.contentDetails,
+              snippet: {
+                ...item.snippet,
+                thumbnail:
+                  item.snippet.thumbnails?.maxres?.url ||
+                  item.snippet.thumbnails?.standard?.url ||
+                  item.snippet.thumbnails?.high?.url ||
+                  item.snippet.thumbnails?.medium?.url ||
+                  item.snippet.thumbnails?.default?.url ||
+                  "",
+              },
+            })) as YtApiVideoData[];
+          })(),
+        );
       }
 
       const allResults = await Promise.all(promises);
-      const finalResult = allResults.flat();
+      return allResults.flat();
+    }
+  }
+}
 
-      return finalResult;
+export namespace SlackApi {
+  const slack = new WebClient(process.env.SLACK_BOT_TOKEN);
+  const CHANNEL_ID = process.env.SLACK_CHANNEL_ID!;
+  const ADMIN_ID = process.env.SLACK_ADMIN_ID!;
+
+  export async function checkActive() {
+    try {
+      const result = await slack.users.getPresence({ user: ADMIN_ID });
+      return result.presence === "active";
+    } catch (error) {
+      console.error("Slack check active error:", error);
+      return false;
+    }
+  }
+
+  export async function sendMessage(text: string, threadTs?: string) {
+    try {
+      const result = await slack.chat.postMessage({
+        channel: CHANNEL_ID,
+        text: text,
+        thread_ts: threadTs, // if null it creates new parent message
+      });
+      return result.ts;
+    } catch (error) {
+      console.error("Slack send error:", error);
+      throw error;
+    }
+  }
+
+  export async function getThread(threadTs: string) {
+    try {
+      const result = await slack.conversations.replies({
+        channel: CHANNEL_ID,
+        ts: threadTs,
+      });
+
+      return (
+        result.messages?.map((msg) => ({
+          text: msg.text,
+          isUser: msg.bot_id ? true : false, // sender is bot
+          ts: msg.ts,
+        })) || []
+      );
+    } catch (error) {
+      console.error("Slack retrieve error:", error);
+      return [];
     }
   }
 }

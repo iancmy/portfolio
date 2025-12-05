@@ -75,3 +75,32 @@ export function videoDataToActivity(videoData: VideoData[]): Activity[] {
 
   return activityData.sort((a, b) => a.date.localeCompare(b.date));
 }
+
+export function formatNumber(num: number){
+  return new Intl.NumberFormat('en-US', {
+    notation: "compact",
+    compactDisplay: "short",
+    maximumFractionDigits: 1
+  }).format(num);
+}
+
+export function parseISODuration(isoDuration: string): string {
+  const matches = isoDuration.match(/P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+  if (!matches) return "00:00";
+
+  const [_, d, h, m, s] = matches;
+
+  const days = parseInt(d || '0');
+  const minutes = parseInt(m || '0');
+  const seconds = parseInt(s || '0');
+
+  let hours = parseInt(h || '0');
+  hours += days * 24;
+
+  const pad = (num: number) => num.toString().padStart(2, '0');
+  const result = [pad(minutes), pad(seconds)]
+
+  if (hours > 0) result.unshift(pad(hours))
+
+  return result.join(":")
+}

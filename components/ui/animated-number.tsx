@@ -1,7 +1,7 @@
 import NumberFlow from "@number-flow/react";
 import { cn } from "@/lib/utils"; // Assuming you have shadcn's cn utility
-import { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
+import { useEffect, useRef, useState } from "react";
+import { useInView } from "motion/react";
 
 interface AnimatedNumberProps {
   initialValue?: number;
@@ -22,9 +22,10 @@ export function AnimatedNumber({
   suffix,
   animate = true,
 }: AnimatedNumberProps) {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.5,
+  const ref = useRef(null)
+  const inView = useInView(ref, {
+    once: true,
+    amount: 0.5,
   });
 
   const [currentValue, setCurrentValue] = useState(initialValue);

@@ -4,7 +4,7 @@ import fs from "fs";
 import path from "path";
 import TOML from "smol-toml";
 
-import { extractYouTubeId, toKebabCase } from "../utils";
+import { extractYouTubeId, parseISODuration, toKebabCase } from "../utils";
 import { VideoData, VideoToml, YtVideoData } from "../types";
 import { GoogleApi } from "./ext";
 
@@ -18,8 +18,8 @@ export function parseVideos() {
   ) as unknown as VideoToml[];
 
   const videos = videosToml.map((video, i) => {
-    const description = video?.description || ""
-    const src = video?.src || video?.ext_src || video?.fallback_src || "";
+    const description = video?.description || "";
+    const src = video.is_yt ? video.ext_src : video?.src || video?.fallback_src || video?.ext_src || "";
     const data = {
       ...video,
       description,
@@ -42,7 +42,7 @@ export async function getVideo(id: string): Promise<VideoData | null> {
   const result = {
     ...video,
     client_avatar: "/images/unknown.png",
-    thumbnail: "/images/default_thumb.jpg"
+    thumbnail: "/images/default_thumb.jpg",
   } as VideoData;
 
   const ytId = extractYouTubeId(video.src);
@@ -51,15 +51,20 @@ export async function getVideo(id: string): Promise<VideoData | null> {
 
   result["thumbnail"] = ytData.snippet.thumbnail;
 
+  const duration = parseISODuration(ytData.contentDetails.duration);
+  result["duration"] = duration;
+
   if (video.is_yt) {
     const ytResult = result as YtVideoData;
     ytResult["title"] = ytData.snippet.title;
     ytResult["date"] = new Date(ytData.snippet.publishedAt);
     ytResult["views"] = parseInt(ytData.statistics.viewCount);
-    ytResult["likes"] = parseInt(ytData.statistics.likeCount)
+    ytResult["likes"] = parseInt(ytData.statistics.likeCount);
 
-    const clientData = await GoogleApi.Youtube.channel(ytData.snippet.channelId)
-    if(!clientData) return ytResult
+    const clientData = await GoogleApi.Youtube.channel(
+      ytData.snippet.channelId,
+    );
+    if (!clientData) return ytResult;
 
     ytResult["client"] = clientData.snippet.title;
     ytResult["client_avatar"] = clientData.snippet.thumbnail;
@@ -68,7 +73,7 @@ export async function getVideo(id: string): Promise<VideoData | null> {
       `https://youtube.com/${clientData.channel_username}`,
     );
     ytResult["channel_src"] = channelUrl.toString();
-    ytResult["subs"] = parseInt(clientData.statistics.subscriberCount)
+    ytResult["subs"] = parseInt(clientData.statistics.subscriberCount);
 
     return ytResult;
   }
@@ -99,7 +104,7 @@ export async function getVideos() {
     const result = {
       ...video,
       client_avatar: "/images/unknown.png",
-      thumbnail: "/images/default_thumb.jpg"
+      thumbnail: "/images/default_thumb.jpg",
     } as VideoData;
 
     const id = extractYouTubeId(video.src);
@@ -107,19 +112,21 @@ export async function getVideos() {
     if (!found) return result;
 
     result["thumbnail"] = found.snippet.thumbnail;
+    const duration = parseISODuration(found.contentDetails.duration);
+    result["duration"] = duration;
 
     if (video.is_yt) {
       const ytResult = result as YtVideoData;
       ytResult["title"] = found.snippet.title;
       ytResult["date"] = new Date(found.snippet.publishedAt);
-      ytResult["views"] = parseInt(found.statistics.viewCount)
-      ytResult["likes"] = parseInt(found.statistics.likeCount)
+      ytResult["views"] = parseInt(found.statistics.viewCount);
+      ytResult["likes"] = parseInt(found.statistics.likeCount);
 
       const channelId = found.snippet.channelId;
       const foundChannel = clientData.find(
         (ytChannel) => ytChannel.id === channelId,
       );
-      if (!foundChannel) return ytResult
+      if (!foundChannel) return ytResult;
 
       ytResult["client"] = foundChannel.snippet.title;
       ytResult["client_avatar"] = foundChannel.snippet.thumbnail;
@@ -128,7 +135,7 @@ export async function getVideos() {
         `https://youtube.com/${foundChannel.channel_username}`,
       );
       ytResult["channel_src"] = channelUrl.toString();
-      ytResult["subs"] = parseInt(foundChannel.statistics.subscriberCount)
+      ytResult["subs"] = parseInt(foundChannel.statistics.subscriberCount);
 
       return ytResult;
     }

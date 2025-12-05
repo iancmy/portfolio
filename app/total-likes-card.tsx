@@ -1,21 +1,21 @@
 "use client";
 
 import { Heart } from "lucide-react";
-import { Card, CardContent, CardTitle } from "./ui/card";
-import { AnimatedNumber } from "./ui/animated-number";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { AnimatedNumber } from "@/components/ui/animated-number";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPortfolio, Portfolio } from "@/lib/api";
 
 export default function TotalLikes() {
   const totalLikesQ = useQuery<Portfolio, Error, number>({
-    queryKey: ["portfolio", "views"],
+    queryKey: ["portfolio"],
     queryFn: fetchPortfolio,
     initialData: new Portfolio(),
     select: (portf) => portf.totalLikes
   });
 
   const sfLikesQ = useQuery<Portfolio, Error, number>({
-    queryKey: ["portfolio", "views", "shorts"],
+    queryKey: ["portfolio"],
     queryFn: fetchPortfolio,
     initialData: new Portfolio(),
     select: (portf) => portf.filter.types("short-form").totalLikes

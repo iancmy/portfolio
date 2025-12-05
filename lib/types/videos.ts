@@ -39,6 +39,7 @@ export interface NonYtVideoData extends Omit<VideoToml, "date" | "is_yt"> {
   date: Date;
   id: string;
   thumbnail: string;
+  duration: string;
 }
 
 export interface YtVideoData extends Omit<VideoToml, "date" | "is_yt"> {
@@ -46,6 +47,7 @@ export interface YtVideoData extends Omit<VideoToml, "date" | "is_yt"> {
   date: Date;
   id: string;
   thumbnail: string;
+  duration: string;
 
   channel_src: string;
   subs: number;

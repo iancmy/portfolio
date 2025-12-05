@@ -22,7 +22,7 @@ const navItems = [
   {
     name: "Dev",
     children: [
-      { name: "Projects", link: "/dev" },
+      { name: "Projects", link: "https://github.com/iancmy?tab=repositories", asNewTab: true },
       { name: "Tools", link: "/dev/tools" },
     ],
   },
@@ -44,7 +44,7 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <ResizableNavbar>
-      {/* Desktop Navigation */}
+      {/* Desktop */}
       <NavBody>
         <NavbarLogo />
         <NavItems items={navItems} />
@@ -60,7 +60,7 @@ export function Navbar() {
         </div>
       </NavBody>
 
-      {/* Mobile Navigation */}
+      {/* Mobile */}
       <MobileNav isOpen={isMobileMenuOpen}>
         <MobileNavHeader>
           <NavbarLogo />

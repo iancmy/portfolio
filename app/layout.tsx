@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Outfit } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/navbar";
-import Footer from "@/components/footer";
-import Providers from "@/components/providers";
+import { Navbar } from "./navbar";
+import Footer from "./footer";
+import Providers from "./providers";
 
 const titleFont = Outfit({
   variable: "--font-title",
@@ -26,7 +26,7 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${titleFont.variable} ${bodyFont.variable} antialiased font-[family-name:var(--font-body)]`}
+        className={`relative ${titleFont.variable} ${bodyFont.variable} antialiased font-[family-name:var(--font-body)]`}
       >
         <Providers>
           <Navbar />

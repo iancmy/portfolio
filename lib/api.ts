@@ -8,6 +8,7 @@ import {
   YtVideoData,
 } from "./types";
 import createFuzzySearch from "@nozbe/microfuzz";
+import { ChatStatus } from "./types/chat";
 
 type SearchPreprocess =
   | {
@@ -401,23 +402,27 @@ export class Portfolio<T extends VideoData = VideoData> {
           : { category: "filter", type: m[4], op: m[5], value: m[6] },
     );
 
-    preprocess.forEach((p, i) =>
-      p.category === "filter"
-        ? console.log(`FILTER${i}: ${p.type}|${p.op}|${p.value}`)
-        : console.log(`SORT${i}: ${p.type}:${p.direction}`),
-    );
-
     const processed = preprocess.reduce(
       (p, c) => (c.category === "sort" ? p.#presort(c) : p.#prefilter(c)),
       this as Portfolio<T>,
     );
 
     const searchQ = query.replace(preprocessR, "").trim();
+    if (!searchQ) return processed
+
     const fuzzy = createFuzzySearch<T>(processed.videos, {
       getText: (video) => [video.title, video.description, video.client],
     });
 
-    return fuzzy(searchQ);
+    return new Portfolio(fuzzy(searchQ).map(r => r.item));
+  }
+
+  head(count: number) {
+    return new Portfolio(this.videos.slice(0, count))
+  }
+
+  tail(count: number) {
+    return new Portfolio(this.videos.slice(-count))
   }
 }
 
@@ -431,4 +436,16 @@ export async function fetchPortfolio() {
 
   const result = (await response.json()) as VideoData[];
   return new Portfolio(result.map((v) => ({ ...v, date: new Date(v.date) })));
+}
+
+export async function checkChatStatus() {
+  const url = "/api/chat/status"
+  const response = await fetch(url);
+
+  if (!response.ok)  {
+    throw new Error("Failed to check chat status.")
+  }
+
+  const result = (await response.json()) as ChatStatus;
+  return result
 }
