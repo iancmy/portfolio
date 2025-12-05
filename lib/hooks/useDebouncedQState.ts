@@ -4,7 +4,7 @@ import useDebouncedState from "./useDebouncedState";
 
 interface DebouncedQState {
   value: string;
-  debouncedQuery: string;
+  debouncedQValue: string;
   setValue: Dispatch<SetStateAction<string>>;
 }
 
@@ -13,14 +13,14 @@ function useDebouncedQState(
   initialValue: string,
   delay = 300,
 ): DebouncedQState {
-  const { value, setValue, debouncedValue } = useDebouncedState(initialValue, delay);
-  const [qValue, setQValue] = useQueryState(key, parseAsString.withDefault(initialValue));
+  const [qValue, setQValue] = useQueryState(key, parseAsString);
+  const { value, setValue, debouncedValue } = useDebouncedState(qValue || initialValue, delay);
 
   useEffect(() => {
     setQValue(debouncedValue)
   }, [delay, debouncedValue]);
 
-  return {value, debouncedQuery: qValue, setValue}
+  return {value, debouncedQValue: qValue || "", setValue}
 }
 
 export default useDebouncedQState;

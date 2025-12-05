@@ -46,9 +46,13 @@ export default function Work() {
   const {
     value: searchInput,
     setValue: setSearch,
-    debouncedQuery: search,
+    debouncedQValue: search,
   } = useDebouncedQState("q", "");
-  const [sort, setSort] = useState("date:latest")
+  const {
+    value: sortInput,
+    setValue: setSort,
+    debouncedQValue: sort
+  } = useDebouncedQState("sort", "date:latest")
   const [filter, setFilter] = useState("")
 
   const portfQ = useQuery<Portfolio>({
@@ -105,7 +109,6 @@ export default function Work() {
             }
           />
         </InputGroup>
-
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="cursor-pointer">
@@ -129,7 +132,7 @@ export default function Work() {
             side="bottom"
             align="start"
           >
-            <ToggleGroup type="single" onValueChange={setSort} value={sort}>
+            <ToggleGroup type="single" onValueChange={setSort} value={sortInput}>
               <SortItem value="date:oldest" tooltipHint="Oldest">
                 <CalendarArrowDown />
               </SortItem>
