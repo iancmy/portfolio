@@ -16,7 +16,8 @@ import { Avatar } from "@/components/ui/avatar";
 import { AnimatedNumber } from "@/components/ui/animated-number";
 import { Eye, Heart, SquareArrowOutUpRight, Users, Video } from "lucide-react";
 import Link from "next/link";
-import { fetchPortfolio, Portfolio } from "@/lib/api";
+import { fetchPortfolio } from "@/lib/api";
+import { Portfolio } from "@/lib/portfolio"
 import { shuffle } from "@/lib/utils";
 
 export default function ClientsCard() {

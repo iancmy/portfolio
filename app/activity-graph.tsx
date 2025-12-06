@@ -6,7 +6,8 @@ import {
   ContributionGraphBlock,
   ContributionGraphCalendar,
 } from "@/components/kibo-ui/contribution-graph";
-import { fetchPortfolio, Portfolio } from "@/lib/api";
+import { fetchPortfolio } from "@/lib/api";
+import { Portfolio } from "@/lib/portfolio"
 import { videoDataToActivity } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
 import { formatISO, sub } from "date-fns";

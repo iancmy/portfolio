@@ -15,7 +15,8 @@ import { useQuery } from "@tanstack/react-query";
 import ActivityGraph from "./activity-graph";
 import { Film, SquareArrowOutUpRight } from "lucide-react";
 import { RainbowButton } from "@/components/ui/rainbow-button";
-import { fetchPortfolio, Portfolio } from "@/lib/api";
+import { fetchPortfolio } from "@/lib/api";
+import { Portfolio } from "@/lib/portfolio"
 import { YtClient } from "@/lib/types";
 
 export default function Home() {

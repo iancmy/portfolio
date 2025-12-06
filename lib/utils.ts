@@ -76,11 +76,11 @@ export function videoDataToActivity(videoData: VideoData[]): Activity[] {
   return activityData.sort((a, b) => a.date.localeCompare(b.date));
 }
 
-export function formatNumber(num: number){
+export function formatNumber(num: number, maxFractionDigits=1){
   return new Intl.NumberFormat('en-US', {
     notation: "compact",
     compactDisplay: "short",
-    maximumFractionDigits: 1
+    maximumFractionDigits: maxFractionDigits
   }).format(num);
 }
 
@@ -103,4 +103,9 @@ export function parseISODuration(isoDuration: string): string {
   if (hours > 0) result.unshift(pad(hours))
 
   return result.join(":")
+}
+
+export function toUpCaseFirst(str: string) {
+  const clean = str.trim()
+  return clean[0].toUpperCase() + clean.slice(1)
 }

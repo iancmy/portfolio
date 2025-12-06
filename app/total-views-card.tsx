@@ -4,7 +4,8 @@ import { Eye } from "lucide-react";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { AnimatedNumber } from "@/components/ui/animated-number";
 import { useQuery } from "@tanstack/react-query";
-import { fetchPortfolio, Portfolio } from "@/lib/api";
+import { fetchPortfolio } from "@/lib/api";
+import { Portfolio } from "@/lib/portfolio"
 
 export default function TotalViews() {
   const totalViewsQ = useQuery<Portfolio, Error, number>({

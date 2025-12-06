@@ -1,7 +1,8 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { fetchPortfolio, Portfolio } from "@/lib/api";
+import { fetchPortfolio } from "@/lib/api";
+import { Portfolio } from "@/lib/portfolio"
 
 export default function Work() {
   return (

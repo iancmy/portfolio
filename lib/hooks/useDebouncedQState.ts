@@ -13,8 +13,12 @@ function useDebouncedQState(
   initialValue: string,
   delay = 300,
 ): DebouncedQState {
-  const [qValue, setQValue] = useQueryState(key, parseAsString);
-  const { value, setValue, debouncedValue } = useDebouncedState(qValue || initialValue, delay);
+  const [qValue, setQValue] = useQueryState(key, parseAsString.withDefault(initialValue));
+  const { value, setValue, debouncedValue } = useDebouncedState(initialValue, delay);
+
+  useEffect(() => {
+    if (qValue) setValue(qValue)
+  }, [])
 
   useEffect(() => {
     setQValue(debouncedValue)

@@ -9,22 +9,19 @@ import { ReactNode } from "react";
 interface SortItemProps {
   children?: ReactNode | ReactNode[];
   value: string;
-  tooltipHint: string;
+  label: string;
 }
 
-export default function SortItem({
-  children,
-  value,
-  tooltipHint,
-}: SortItemProps) {
+export default function SortItem({ children, value, label }: SortItemProps) {
   return (
-    <Tooltip delayDuration={500}>
-      <ToggleGroupItem value={value} className="cursor-pointer text-sm">
-        <TooltipTrigger asChild>{children}</TooltipTrigger>
-      </ToggleGroupItem>
-      <TooltipContent align="start">
-        <p className="">{tooltipHint}</p>
-      </TooltipContent>
-    </Tooltip>
+    <ToggleGroupItem
+      value={value}
+      className="cursor-pointer text-sm min-w-40 justify-start"
+    >
+      <p className="flex gap-2 items-center truncate">
+        {children}
+        <span>{label}</span>
+      </p>
+    </ToggleGroupItem>
   );
 }
