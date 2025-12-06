@@ -70,42 +70,50 @@ export function videoDataToActivity(videoData: VideoData[]): Activity[] {
       const [date, count] = dateCount;
 
       return { date, count, level: count === 1 ? 2 : count === 2 ? 3 : 4 };
-    })
+    }),
   );
 
   return activityData.sort((a, b) => a.date.localeCompare(b.date));
 }
 
-export function formatNumber(num: number, maxFractionDigits=1){
-  return new Intl.NumberFormat('en-US', {
+export function formatNumber(num: number, maxFractionDigits = 1) {
+  return new Intl.NumberFormat("en-US", {
     notation: "compact",
     compactDisplay: "short",
-    maximumFractionDigits: maxFractionDigits
+    maximumFractionDigits: maxFractionDigits,
   }).format(num);
 }
 
 export function parseISODuration(isoDuration: string): string {
-  const matches = isoDuration.match(/P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
+  const matches = isoDuration.match(
+    /P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/,
+  );
   if (!matches) return "00:00";
 
   const [_, d, h, m, s] = matches;
 
-  const days = parseInt(d || '0');
-  const minutes = parseInt(m || '0');
-  const seconds = parseInt(s || '0');
+  const days = parseInt(d || "0");
+  const minutes = parseInt(m || "0");
+  const seconds = parseInt(s || "0");
 
-  let hours = parseInt(h || '0');
+  let hours = parseInt(h || "0");
   hours += days * 24;
 
-  const pad = (num: number) => num.toString().padStart(2, '0');
-  const result = [pad(minutes), pad(seconds)]
+  const pad = (num: number) => num.toString().padStart(2, "0");
+  const result = [pad(minutes), pad(seconds)];
 
-  if (hours > 0) result.unshift(pad(hours))
+  if (hours > 0) result.unshift(pad(hours));
 
-  return result.join(":")
+  return result.join(":");
 }
 
 export function toUpCaseFirst(str: string) {
-  const clean = str.trim()
-  return clean[0].toUpperCase() + clean.slice(1)
+  const clean = str.trim();
+  return clean[0].toUpperCase() + clean.slice(1);
+}
+
+export function arrayEq<T>(array1: T[], array2: T[]) {
+  return (
+    array1.length === array2.length && array1.every((x, i) => x === array2[i])
+  );
 }

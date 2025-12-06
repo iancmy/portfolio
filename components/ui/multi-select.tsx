@@ -312,9 +312,10 @@ export function MultiSelectItem({
         toggleValue(value)
         onSelect?.(value)
       }}
+      className="group"
     >
       <CheckIcon
-        className={cn("mr-2 size-4", isSelected ? "opacity-100" : "opacity-0")}
+        className={cn("mr-2 size-4", isSelected ? "opacity-100" : "opacity-0", "group-hover:text-muted text-primary")}
       />
       {children}
     </CommandItem>

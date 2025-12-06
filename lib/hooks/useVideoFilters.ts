@@ -37,3 +37,5 @@ export function useVideoFilters(defaults?: FilterDefaults) {
 
   return useQueryStates(parsers);
 }
+
+export type UseVideoFiltersReturn = ReturnType<typeof useVideoFilters>;

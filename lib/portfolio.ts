@@ -100,21 +100,21 @@ export class Portfolio<T extends VideoData = VideoData> {
 
   #filterRoles(...which: VideoRoles[]) {
     const filtered = this.videos.filter((v) =>
-      which.every((w) => v.role.includes(w)),
+      which.some((w) => v.role.includes(w)),
     );
     return new Portfolio(filtered);
   }
 
   #filterTypes(...which: VideoTypes[]) {
     const filtered = this.videos.filter((v) =>
-      which.every((w) => v.type.includes(w)),
+      which.some((w) => v.type.includes(w)),
     );
     return new Portfolio(filtered);
   }
 
   #filterCategories(...which: VideoCategories[]) {
     const filtered = this.videos.filter((v) =>
-      which.every((w) => v.category.includes(w)),
+      which.some((w) => v.category.includes(w)),
     );
     return new Portfolio(filtered);
   }

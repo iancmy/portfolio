@@ -1,10 +1,9 @@
 "use client";
-import { cn, formatNumber } from "@/lib/utils";
+import { arrayEq, cn, formatNumber } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPortfolio } from "@/lib/api";
 import { Portfolio } from "@/lib/portfolio";
 import {
-  Activity,
   ChangeEvent,
   useEffect,
   useMemo,
@@ -15,18 +14,20 @@ import {
   ArrowDownAZ,
   ArrowDownNarrowWide,
   ArrowDownZA,
+  Calendar,
   CalendarArrowDown,
   CalendarArrowUp,
   CheckCheck,
   Copy,
+  Eye,
   Funnel,
-  FunnelPlus,
   FunnelX,
   Heart,
   HeartOff,
   SearchIcon,
   Star,
   StarOff,
+  X,
 } from "lucide-react";
 import VideoFeed from "./video-feed";
 import {
@@ -41,14 +42,14 @@ import { AnimatePresence, useInView } from "motion/react";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuLabel,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { ToggleGroup } from "@/components/ui/toggle-group";
 import SortItem from "./sort-item";
 import { useQueryState, parseAsString } from "nuqs";
-import { FilterDefaults, useVideoFilters } from "@/lib/hooks/useVideoFilters";
+import {
+  useVideoFilters,
+} from "@/lib/hooks/useVideoFilters";
 import {
   MultiSelect,
   MultiSelectContent,
@@ -65,6 +66,7 @@ import {
 import { motion } from "motion/react";
 import { Slider } from "@/components/ui/slider";
 import { VideoCategories, VideoRoles, VideoTypes } from "@/lib/types";
+import { Badge } from "@/components/ui/badge";
 
 const PAGE_SIZE = 20;
 export default function Work() {
@@ -114,6 +116,7 @@ export default function Work() {
   );
 
   const [filter, setFilter] = useVideoFilters(defaultFilters);
+  const [selected, setSelected] = useState<string[]>([]);
 
   useEffect(() => {
     setVisibleCount(PAGE_SIZE);
@@ -127,9 +130,14 @@ export default function Work() {
     if (search) query = query.search(search);
 
     // filter
-    if (filter.roles.length) query = query.filter.roles(...filter.roles as VideoRoles[])
-    if (filter.types.length) query = query.filter.types(...filter.types as VideoTypes[])
-    if (filter.categories.length) query = query.filter.categories(...filter.categories as VideoCategories[])
+    if (filter.roles.length)
+      query = query.filter.roles(...(filter.roles as VideoRoles[]));
+    if (filter.types.length)
+      query = query.filter.types(...(filter.types as VideoTypes[]));
+    if (filter.categories.length)
+      query = query.filter.categories(
+        ...(filter.categories as VideoCategories[]),
+      );
     if (filter.ids.length) query = query.filter.id(...filter.ids);
     if (filter.date.length)
       query = query.filter.date(
@@ -187,7 +195,7 @@ export default function Work() {
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       const target = e.target as HTMLElement;
-      if (target.closest('#filter-panel-toggle')) return;
+      if (target.closest("#filter-panel-toggle")) return;
       if (panelRef.current && panelRef.current.contains(target)) return;
       if (target.closest('[data-slot="command-list"]')) return;
       if (target.nodeName === "HTML") return;
@@ -199,10 +207,23 @@ export default function Work() {
     };
   }, [setShowFilterPanel]);
 
+  const dateFilterEq = useMemo(
+    () => arrayEq(filter.date, defaultFilters.date),
+    [filter.date, defaultFilters.date],
+  );
+  const viewsFilterEq = useMemo(
+    () => arrayEq(filter.views, defaultFilters.views),
+    [filter.views, defaultFilters.views],
+  );
+  const likesFilterEq = useMemo(
+    () => arrayEq(filter.likes, defaultFilters.likes),
+    [filter.likes, defaultFilters.likes],
+  );
+
   return (
     <div className="relative w-full flex flex-col items-center justify-start gap-12 px-4">
       <ButtonGroup className="flex w-full text-sm px-4">
-        <InputGroup className="rounded-lg w-full 2xl:max-w-3/10 lg:max-w-1/2 max-w-full">
+        <InputGroup className="rounded-lg 2xl:max-w-3/10 lg:max-w-1/2 max-w-full">
           <InputGroupAddon align="inline-start">
             <SearchIcon />
           </InputGroupAddon>
@@ -212,6 +233,7 @@ export default function Work() {
             onInput={(e: ChangeEvent<HTMLInputElement>) =>
               setSearch(e.target.value)
             }
+            className="text-sm"
           />
         </InputGroup>
         <Button
@@ -293,7 +315,187 @@ export default function Work() {
             )}
           </div>
         </Button>
+        <AnimatePresence>
+          {selected.length && (
+            <motion.div
+              key="selected-hint"
+              initial={{ opacity: 0, translateX: -20 }}
+              animate={{ opacity: 1, translateX: 0 }}
+              exit={{ opacity: 0, translateX: -20 }}
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+              className={cn(
+                "self-start p-2 rounded-md bg-muted/40 whitespace-nowrap text-muted-foreground text-sm flex gap-2 items-center",
+              )}
+            >
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <motion.span
+                    className="flex gap-2 items-center cursor-pointer text-muted-foreground"
+                    onClick={() => {
+                      setFilter((f) => ({ ids: [...f.ids, ...selected] }));
+                      setSelected([]);
+                    }}
+                    animate={{ y: [-1, 0, -3, 0, -1] }}
+                    transition={{
+                      duration: 0.6,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    {selected.length}
+                    <CheckCheck size="1em" />
+                  </motion.span>
+                </TooltipTrigger>
+                <TooltipContent>Add as Filter</TooltipContent>
+              </Tooltip>
+              <span
+                className="text-red-400 cursor-pointer"
+                onClick={() => setSelected([])}
+              >
+                <X size="1.2em" />
+              </span>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </ButtonGroup>
+      <div className="flex flex-wrap gap-1 px-8 -my-8 items-end self-start">
+        <span className="font-title text-md text-muted-foreground">
+          Filters:
+        </span>
+        {dateFilterEq &&
+        viewsFilterEq &&
+        likesFilterEq &&
+        filter.roles.length < 1 &&
+        filter.types.length < 1 &&
+        filter.categories.length < 1 &&
+        filter.ids.length < 1 ? (
+          <span className="font-title text-md text-muted-foreground/50">
+            None
+          </span>
+        ) : (
+          <Badge
+            className={cn(
+              "bg-red-400/40 text-foreground/80 font-bold flex gap-2 items-center cursor-pointer",
+            )}
+            onClick={() =>
+              setFilter({
+                roles: [],
+                types: [],
+                categories: [],
+                ids: [],
+                ...defaultFilters,
+              })
+            }
+          >
+            <FunnelX />
+            Clear All
+            <X />
+          </Badge>
+        )}
+        {!dateFilterEq && (
+          <Badge
+            className={cn(
+              "bg-muted text-foreground/80 font-bold flex gap-2 items-center cursor-pointer",
+            )}
+            onClick={() => setFilter({ date: defaultFilters.date })}
+          >
+            <Calendar />
+            {new Date(filter.date[0]).toLocaleDateString()} -{" "}
+            {new Date(filter.date[1]).toLocaleDateString()}
+            <X className="text-red-400" />
+          </Badge>
+        )}
+        {!viewsFilterEq && (
+          <Badge
+            className={cn(
+              "bg-muted text-foreground/80 font-bold flex gap-2 items-center cursor-pointer",
+            )}
+            onClick={() => setFilter({ views: defaultFilters.views })}
+          >
+            <Eye />
+            {formatNumber(filter.views[0])} - {formatNumber(filter.views[1])}
+            <X className="text-red-400" />
+          </Badge>
+        )}
+        {!likesFilterEq && (
+          <Badge
+            className={cn(
+              "bg-muted text-foreground/80 font-bold flex gap-2 items-center cursor-pointer",
+            )}
+            onClick={() => setFilter({ likes: defaultFilters.likes })}
+          >
+            <Eye />
+            {formatNumber(filter.likes[0])} - {formatNumber(filter.likes[1])}
+            <X className="text-red-400" />
+          </Badge>
+        )}
+        {filter.roles.map((role, i) => {
+          return (
+            <Badge
+              key={`roles-filter-badge-${role}-${i}`}
+              className={cn(
+                "bg-muted text-foreground/80 font-bold flex gap-2 items-center cursor-pointer",
+              )}
+              onClick={() =>
+                setFilter((f) => ({ roles: f.roles.filter((r) => r !== role) }))
+              }
+            >
+              role: {role}
+              <X className="text-red-400" />
+            </Badge>
+          );
+        })}
+        {filter.types.map((type, i) => {
+          return (
+            <Badge
+              key={`types-filter-badge-${type}-${i}`}
+              className={cn(
+                "bg-muted text-foreground/80 font-bold flex gap-2 items-center cursor-pointer",
+              )}
+              onClick={() =>
+                setFilter((f) => ({ types: f.types.filter((t) => t !== type) }))
+              }
+            >
+              type: {type}
+              <X className="text-red-400" />
+            </Badge>
+          );
+        })}
+        {filter.categories.map((category, i) => {
+          return (
+            <Badge
+              key={`categories-filter-badge-${category}-${i}`}
+              className={cn(
+                "bg-muted text-foreground/80 font-bold flex gap-2 items-center cursor-pointer",
+              )}
+              onClick={() =>
+                setFilter((f) => ({
+                  categories: f.categories.filter((c) => c !== category),
+                }))
+              }
+            >
+              category: {category}
+              <X className="text-red-400" />
+            </Badge>
+          );
+        })}
+        {filter.ids.map((id, i) => {
+          return (
+            <Badge
+              key={`ids-filter-badge-${id}-${i}`}
+              className={cn(
+                "bg-muted text-foreground/80 font-bold flex gap-2 items-center cursor-pointer",
+              )}
+              onClick={() =>
+                setFilter((f) => ({ ids: f.ids.filter((fid) => fid !== id) }))
+              }
+            >
+              id: {id}
+              <X className="text-red-400" />
+            </Badge>
+          );
+        })}
+      </div>
       <AnimatePresence>
         {showFilterPanel && (
           <motion.div
@@ -304,10 +506,13 @@ export default function Work() {
             exit={{ opacity: 0, translateY: -20 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
             className={cn(
-              "flex flex-col gap-2 self-center xl:self-start mx-4 -my-8 p-4 rounded-md bg-muted/30 w-3/4 overflow-hidden",
+              "flex flex-col gap-2 self-center xl:self-start mx-4 -mb-8 p-4 rounded-md bg-muted/30 w-3/4 overflow-hidden",
             )}
           >
-            <p className="text-xl font-title font-bold">Filter by</p>
+            <div className="text-xl font-title font-bold flex w-full items-center justify-between">
+                          <span>Filter by</span>
+              <X size="1em" className="text-red-400 self-start cursor-pointer" onClick={() => setShowFilterPanel(false)}/>
+            </div>
             <div className="self-start h-full w-full grid grid-cols-1 xl:grid-cols-2 gap-4 overflow-y-auto overflow-x-hidden mx-4 pr-8">
               <div className="flex flex-col gap-2 items-start">
                 <p className="font-title text-md font-semibold">Categories</p>
@@ -461,6 +666,8 @@ export default function Work() {
       <VideoFeed
         feed={videoFeedData}
         loading={!portfQ?.data || portfQ.isLoading}
+        setSelected={setSelected}
+        selected={selected}
       />
       <div className="text-sm text-muted-foreground">
         {!isLast && <p>Loading more...</p>}
