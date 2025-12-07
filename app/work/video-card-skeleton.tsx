@@ -1,3 +1,5 @@
+"use client"
+
 import { Dot } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 

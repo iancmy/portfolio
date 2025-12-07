@@ -3,13 +3,7 @@ import { arrayEq, cn, formatNumber } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPortfolio } from "@/lib/api";
 import { Portfolio } from "@/lib/portfolio";
-import {
-  ChangeEvent,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { ChangeEvent, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowDownAZ,
   ArrowDownNarrowWide,
@@ -18,6 +12,7 @@ import {
   CalendarArrowDown,
   CalendarArrowUp,
   CheckCheck,
+  CircleQuestionMark,
   Copy,
   Eye,
   Funnel,
@@ -25,6 +20,7 @@ import {
   Heart,
   HeartOff,
   SearchIcon,
+  Settings2,
   Star,
   StarOff,
   X,
@@ -47,9 +43,7 @@ import {
 import { ToggleGroup } from "@/components/ui/toggle-group";
 import SortItem from "./sort-item";
 import { useQueryState, parseAsString } from "nuqs";
-import {
-  useVideoFilters,
-} from "@/lib/hooks/useVideoFilters";
+import { useVideoFilters } from "@/lib/hooks/useVideoFilters";
 import {
   MultiSelect,
   MultiSelectContent,
@@ -83,7 +77,7 @@ export default function Work() {
   } = useDebouncedQState("q", "");
   const [sort, setSort] = useQueryState(
     "sort",
-    parseAsString.withDefault("date:latest"),
+    parseAsString.withDefault("views:desc"),
   );
 
   const portfQ = useQuery<Portfolio>({
@@ -173,6 +167,7 @@ export default function Work() {
   }, [query, visibleCount]);
 
   const [showFilterPanel, setShowFilterPanel] = useState(false);
+  const [showSortMenu, setShowSortMenu] = useState(false);
   const [showQueryCopied, setShowQueryCopied] = useState(false);
 
   async function copyQuery() {
@@ -249,9 +244,12 @@ export default function Work() {
             <Funnel size="1.5em" />
           )}
         </Button>
-        <DropdownMenu>
+        <DropdownMenu open={showSortMenu} onOpenChange={setShowSortMenu}>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="cursor-pointer">
+            <Button
+              variant="outline"
+              className="cursor-pointer"
+            >
               <ArrowDownNarrowWide size="1.5em" />
             </Button>
           </DropdownMenuTrigger>
@@ -262,7 +260,7 @@ export default function Work() {
           >
             <ToggleGroup
               type="single"
-              onValueChange={setSort}
+              onValueChange={(v) => v && setSort(v)}
               value={sort}
               orientation="vertical"
               className="items-start"
@@ -273,10 +271,10 @@ export default function Work() {
               <SortItem value="date:latest" label="Latest">
                 <CalendarArrowUp />
               </SortItem>
-              <SortItem value="title:asc" label="A-Z Title">
+              <SortItem value="title:asc" label="Title A-Z">
                 <ArrowDownAZ />
               </SortItem>
-              <SortItem value="title:desc" label="Z-A Title">
+              <SortItem value="title:desc" label="Title Z-A">
                 <ArrowDownZA />
               </SortItem>
               <SortItem value="views:desc" label="Most Popular">
@@ -358,6 +356,56 @@ export default function Work() {
           )}
         </AnimatePresence>
       </ButtonGroup>
+      <div className="flex flex-wrap gap-1 px-8 -mt-8 items-end self-start">
+        <span className="font-title text-md text-muted-foreground">
+          Sort by:
+        </span>
+        <Badge
+          className={cn(
+            "bg-primary/40 text-foreground/80 font-bold flex gap-2 items-center cursor-pointer",
+          )}
+          onClick={() => setShowSortMenu(true)}
+        >
+          {sort === "date:oldest" ? (
+            <CalendarArrowDown />
+          ) : sort === "date:latest" ? (
+            <CalendarArrowUp />
+          ) : sort === "title:asc" ? (
+            <ArrowDownAZ />
+          ) : sort === "title:desc" ? (
+            <ArrowDownZA />
+          ) : sort === "views:desc" ? (
+            <Star />
+          ) : sort === "views:asc" ? (
+            <StarOff />
+          ) : sort === "likes:desc" ? (
+            <Heart />
+          ) : sort === "likes:asc" ? (
+            <HeartOff />
+          ) : (
+            <CircleQuestionMark />
+          )}
+
+          {sort === "date:oldest"
+            ? "Oldest"
+            : sort === "date:latest"
+              ? "Latest"
+              : sort === "title:asc"
+                ? "Title A-Z"
+                : sort === "title:desc"
+                  ? "Title Z-A"
+                  : sort === "views:desc"
+                    ? "Most Popular"
+                    : sort === "views:asc"
+                      ? "Least Popular"
+                      : sort === "likes:desc"
+                        ? "Most Liked"
+                        : sort === "likes:asc"
+                          ? "Least Liked"
+                          : "None"}
+          <Settings2 />
+        </Badge>
+      </div>
       <div className="flex flex-wrap gap-1 px-8 -my-8 items-end self-start">
         <span className="font-title text-md text-muted-foreground">
           Filters:
@@ -510,8 +558,12 @@ export default function Work() {
             )}
           >
             <div className="text-xl font-title font-bold flex w-full items-center justify-between">
-                          <span>Filter by</span>
-              <X size="1em" className="text-red-400 self-start cursor-pointer" onClick={() => setShowFilterPanel(false)}/>
+              <span>Filter by</span>
+              <X
+                size="1em"
+                className="text-red-400 self-start cursor-pointer"
+                onClick={() => setShowFilterPanel(false)}
+              />
             </div>
             <div className="self-start h-full w-full grid grid-cols-1 xl:grid-cols-2 gap-4 overflow-y-auto overflow-x-hidden mx-4 pr-8">
               <div className="flex flex-col gap-2 items-start">

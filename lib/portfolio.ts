@@ -285,7 +285,10 @@ export class Portfolio<T extends VideoData = VideoData> {
 
   #sortViews(asc = false) {
     const MULT = asc ? 1 : -1;
-    const sorted = this.yt.videos.toSorted((a, b) => {
+    const sorted = this.videos.toSorted((a, b) => {
+      if (!a.is_yt) return 1
+      if (!b.is_yt) return -1
+
       const diff = a.views - b.views;
       return diff * MULT;
     });
@@ -295,7 +298,10 @@ export class Portfolio<T extends VideoData = VideoData> {
 
   #sortLikes(asc = false) {
     const MULT = asc ? 1 : -1;
-    const sorted = this.yt.videos.toSorted((a, b) => {
+    const sorted = this.videos.toSorted((a, b) => {
+      if (!a.is_yt) return 1
+      if (!b.is_yt) return -1
+
       const diff = a.likes - b.likes;
       return diff * MULT;
     });
