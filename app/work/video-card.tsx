@@ -12,21 +12,27 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 interface VideoCardProps {
   video: VideoData;
-  setSelected: Dispatch<SetStateAction<string[]>>
-  selected: string[]
+  setSelected: Dispatch<SetStateAction<string[]>>;
+  selected: string[];
 }
 
-export default function VideoCard({video: v, setSelected, selected}: VideoCardProps) {
-  const [isSelected, setIsSelected] = useState(selected.some(s => s === v.id));
+export default function VideoCard({
+  video: v,
+  setSelected,
+  selected,
+}: VideoCardProps) {
+  const [isSelected, setIsSelected] = useState(
+    selected.some((s) => s === v.id),
+  );
 
   useEffect(() => {
-    if (isSelected) setSelected((s) => ([...s, v.id]));
+    if (isSelected) setSelected((s) => [...s, v.id]);
     else setSelected((s) => s.filter((id) => id !== v.id));
   }, [isSelected]);
 
   useEffect(() => {
-    setIsSelected(selected.some(s => s === v.id))
-  }, [selected])
+    setIsSelected(selected.some((s) => s === v.id));
+  }, [selected]);
 
   return (
     <div
@@ -37,7 +43,7 @@ export default function VideoCard({video: v, setSelected, selected}: VideoCardPr
     >
       <div className="w-full h-full">
         <Link
-          href={`/api/videos/${v.id}`}
+          href={`/work/${v.id}`}
           className="block group relative w-full rounded-md aspect-video overflow-hidden"
         >
           <p className="absolute z-10 bottom-2 right-2 text-xs p-1 px-2 bg-black/40 rounded-md">
@@ -61,16 +67,40 @@ export default function VideoCard({video: v, setSelected, selected}: VideoCardPr
           />
         </Link>
         <div className="flex gap-2 p-2">
-          <Avatar className="overflow-hidden rounded-2xl w-1/10 h-1/10 shrink-0">
-            <AvatarImage
-              src={v.client_avatar}
-              className="w-full h-full object-cover"
-            />
+          <Avatar className="overflow-hidden rounded-2xl w-1/10 h-1/10 shrink-0 mt-1">
+            {v.is_yt ? (
+              <Link href={v.channel_src} target="_blank">
+                <AvatarImage
+                  src={v.client_avatar}
+                  className="w-full h-full object-cover"
+                />
+              </Link>
+            ) : (
+              <AvatarImage
+                src={v.client_avatar}
+                className="w-full h-full object-cover"
+              />
+            )}
             <AvatarFallback>{v.client?.[0]}</AvatarFallback>
           </Avatar>
           <div className="overflow-hidden">
-            <p className="font-title font-bold truncate">{v.title}</p>
-            <p className="text-muted-foreground text-sm">{v.client}</p>
+            <Link
+              href={`/work/${v.id}`}
+              className="block font-title font-bold truncate"
+            >
+              {v.title}
+            </Link>
+            {v.is_yt ? (
+              <Link
+                href={v.channel_src}
+                className="block text-muted-foreground text-sm"
+                target="_blank"
+              >
+                {v.client}
+              </Link>
+            ) : (
+              <p className="block text-muted-foreground text-sm">{v.client}</p>
+            )}
             <p className="text-muted-foreground text-sm">
               {v.is_yt ? (
                 <span>{formatNumber(v.views)} views</span>

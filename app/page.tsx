@@ -18,6 +18,7 @@ import { RainbowButton } from "@/components/ui/rainbow-button";
 import { fetchPortfolio } from "@/lib/api";
 import { Portfolio } from "@/lib/portfolio"
 import { YtClient } from "@/lib/types";
+import YoutubeIcon from "@/components/icons/youtube";
 
 export default function Home() {
   const { theme } = useTheme();
@@ -120,16 +121,7 @@ export default function Home() {
       <ActivityGraph />
       <div className="mt-12 flex flex-col gap-4">
         <p className="mt-8 bg-red-500/20 py-4 w-5xl rounded-2xl text-5xl font-bold font-title flex gap-4 items-center justify-center text-red-500 shadow-md">
-          <svg
-            role="img"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            className="w-12 h-12"
-          >
-            <title>YouTube</title>
-            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.12 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-          </svg>
+          <YoutubeIcon />
           <span>Youtube Stats</span>
         </p>
         <div className="flex gap-2 items-center place-self-center font-title text-2xl not-lg:text-xl">

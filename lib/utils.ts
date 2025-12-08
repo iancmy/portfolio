@@ -117,3 +117,13 @@ export function arrayEq<T>(array1: T[], array2: T[]) {
     array1.length === array2.length && array1.every((x, i) => x === array2[i])
   );
 }
+
+export function arrayPrev<T>(array: T[], currIndex: number) {
+  if (currIndex <= 0 || currIndex >= array.length) return null;
+  return array[currIndex - 1];
+}
+
+export function arrayNext<T>(array: T[], currIndex: number) {
+  if (currIndex < 0 || currIndex >= array.length - 1) return null;
+  return array[currIndex + 1]
+}

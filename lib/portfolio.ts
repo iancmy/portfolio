@@ -34,7 +34,7 @@ export class Portfolio<T extends VideoData = VideoData> {
   }
 
   get yt() {
-    const ytVideos = this.videos.filter((v) => v.is_yt) as YtVideoData[];
+    const ytVideos = this.videos.filter((v) => v.is_yt && v?.channel_src && v?.views && v?.likes) as YtVideoData[];
     return new Portfolio<YtVideoData>(ytVideos);
   }
 

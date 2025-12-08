@@ -61,8 +61,11 @@ import { motion } from "motion/react";
 import { Slider } from "@/components/ui/slider";
 import { VideoCategories, VideoRoles, VideoTypes } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
+import { Toggle } from "@/components/ui/toggle";
+import YoutubeIcon from "@/components/icons/youtube";
+import { useVideoQueueStore } from "@/lib/store";
 
-const PAGE_SIZE = 20;
+const PAGE_SIZE = 12;
 export default function Work() {
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   const [isLast, setIsLast] = useState(false);
@@ -124,6 +127,7 @@ export default function Work() {
     if (search) query = query.search(search);
 
     // filter
+    if (filter.yt_only) query = query.yt;
     if (filter.roles.length)
       query = query.filter.roles(...(filter.roles as VideoRoles[]));
     if (filter.types.length)
@@ -147,6 +151,11 @@ export default function Work() {
 
     return query;
   }, [portfQ?.data, portfQ.isLoading, search, sort, filter]);
+
+  const setQueue = useVideoQueueStore((state) => state.setQueue);
+  useEffect(() => {
+    if (query.videos && query.count > 0) setQueue(query.videos.map((v) => v.id));
+  }, [query.videos, query.count, setQueue]);
 
   useEffect(() => {
     if (visibleCount >= query.count) setIsLast(true);
@@ -246,10 +255,7 @@ export default function Work() {
         </Button>
         <DropdownMenu open={showSortMenu} onOpenChange={setShowSortMenu}>
           <DropdownMenuTrigger asChild>
-            <Button
-              variant="outline"
-              className="cursor-pointer"
-            >
+            <Button variant="outline" className="cursor-pointer">
               <ArrowDownNarrowWide size="1.5em" />
             </Button>
           </DropdownMenuTrigger>
@@ -416,7 +422,8 @@ export default function Work() {
         filter.roles.length < 1 &&
         filter.types.length < 1 &&
         filter.categories.length < 1 &&
-        filter.ids.length < 1 ? (
+        filter.ids.length < 1 &&
+        !filter.yt_only ? (
           <span className="font-title text-md text-muted-foreground/50">
             None
           </span>
@@ -431,6 +438,7 @@ export default function Work() {
                 types: [],
                 categories: [],
                 ids: [],
+                yt_only: false,
                 ...defaultFilters,
               })
             }
@@ -438,6 +446,18 @@ export default function Work() {
             <FunnelX />
             Clear All
             <X />
+          </Badge>
+        )}
+        {filter.yt_only && (
+          <Badge
+            className={cn(
+              "bg-muted text-foreground/80 font-bold flex gap-2 items-center cursor-pointer",
+            )}
+            onClick={() => setFilter({ yt_only: false })}
+          >
+            <YoutubeIcon />
+            Youtube Only
+            <X className="text-red-400" />
           </Badge>
         )}
         {!dateFilterEq && (
@@ -697,21 +717,33 @@ export default function Work() {
                 </p>
               </div>
             </div>
-            <Button
-              variant="destructive"
-              className="font-title font-bold cursor-pointer mt-4 xl:mr-4 xl:self-end xl:w-2xs"
-              onClick={() =>
-                setFilter({
-                  roles: [],
-                  types: [],
-                  categories: [],
-                  ids: [],
-                  ...defaultFilters,
-                })
-              }
-            >
-              Clear All
-            </Button>
+            <div className="flex mt-4 xl:mr-4 xl:self-end xl:w-2xs gap-4">
+              <Toggle
+                aria-label="Toggle bookmark"
+                variant="outline"
+                className="text-muted-foreground data-[state=on]:text-foreground data-[state=on]:bg-red-500 cursor-pointer duration-400"
+                pressed={filter.yt_only}
+                onClick={() => setFilter((p) => ({ yt_only: !p.yt_only }))}
+              >
+                <YoutubeIcon />
+                Show Youtube Only
+              </Toggle>
+              <Button
+                variant="destructive"
+                className="font-title font-bold cursor-pointer"
+                onClick={() => {
+                  setFilter({
+                    roles: [],
+                    types: [],
+                    categories: [],
+                    ids: [],
+                    ...defaultFilters,
+                  });
+                }}
+              >
+                Clear All
+              </Button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

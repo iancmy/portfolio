@@ -3,6 +3,7 @@ import {
   parseAsString,
   parseAsArrayOf,
   parseAsInteger,
+  parseAsBoolean,
 } from "nuqs";
 import { useMemo } from "react";
 
@@ -14,7 +15,8 @@ export interface FilterDefaults {
 
   date?: number[],
   views?: number[],
-  likes?: number[]
+  likes?: number[],
+  yt_only?: boolean
 }
 
 export const filterParsers = (defaults?: FilterDefaults) => {
@@ -27,6 +29,7 @@ export const filterParsers = (defaults?: FilterDefaults) => {
     date: parseAsArrayOf(parseAsInteger, ":").withDefault(defaults?.date || []),
     views: parseAsArrayOf(parseAsInteger, "..").withDefault(defaults?.views || []),
     likes: parseAsArrayOf(parseAsInteger, "..").withDefault(defaults?.likes || []),
+    yt_only: parseAsBoolean.withDefault(false)
   };
 };
 

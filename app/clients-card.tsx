@@ -41,13 +41,13 @@ export default function ClientsCard() {
       ]}
     >
       <CarouselContent>
-        {!ytChannelsQ.isLoading ? ytChannelsQ.data?.map((client, i) => {
+        {ytChannelsQ.data ? ytChannelsQ.data?.map((client, i) => {
               return (
                 <CarouselItem
                   key={`${i}-${client.name}`}
                   className="relative lg:basis-1/3 md:basis-1/2"
                 >
-                  <Link href={client.channel_src} target="_blank">
+                  <Link href={client?.channel_src || ""} target="_blank">
                     <Card>
                       <CardHeader className="flex gap-2 items-center">
                         <Avatar>
