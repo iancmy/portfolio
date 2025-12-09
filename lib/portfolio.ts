@@ -433,17 +433,23 @@ export class Portfolio<T extends VideoData = VideoData> {
   }
 
   get max() {
+    const mostPopular = this.sort.views.desc().videos[0] as YtVideoData
+    const mostLiked = this.sort.likes.desc().videos[0] as YtVideoData
+
     return {
-      views: this.sort.views.desc().videos[0]?.views || 200_000_000,
-      likes: this.sort.likes.desc().videos[0]?.likes || 20_000_000,
+      views: mostPopular?.views || 200_000_000,
+      likes: mostLiked?.likes || 20_000_000,
       date: this.sort.date.latest().videos[0]?.date || new Date()
     }
   }
 
   get min() {
+    const leastPopular = this.sort.views.asc().videos[0] as YtVideoData
+    const leastLiked = this.sort.likes.asc().videos[0] as YtVideoData
+
     return {
-      views: this.sort.views.asc().videos[0]?.views || 0,
-      likes: this.sort.likes.asc().videos[0]?.likes || 0,
+      views: leastPopular?.views || 0,
+      likes: leastLiked?.likes || 0,
       date: this.sort.date.oldest().videos[0]?.date || new Date("1/1/2010")
     }
   }

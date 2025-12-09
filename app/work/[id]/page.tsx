@@ -43,7 +43,7 @@ import Link from "next/link";
 import { ButtonGroup } from "@/components/ui/button-group";
 import { useVideoPlayerStore } from "./store";
 
-interface VideoProps {
+export interface VideoPlayerProps {
   params: Promise<{ id: string }>;
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }
@@ -51,7 +51,8 @@ interface VideoProps {
 const CONTROLS_DURATION = 2000;
 const DOUBLE_TAP_THRESHOLD = 300;
 const HOLD_THRESHOLD = 500;
-export default function Video({ params, searchParams }: VideoProps) {
+
+export default function VideoPlayer({ params, searchParams }: VideoPlayerProps) {
   const queryClient = useQueryClient();
 
   const { id } = use(params);
