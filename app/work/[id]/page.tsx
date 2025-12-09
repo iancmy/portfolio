@@ -648,6 +648,12 @@ export default function Video({ params, searchParams }: VideoProps) {
           </div>
         </motion.div>
       </AnimatePresence>
+      {/* {!!prev() && ( */}
+      {/*   <Skeleton className="size-full absolute bottom-full z-50 touch-none p-2 mb-4 text-sm font-title bg-muted rounded-md flex flex-col gap-2 justify-end overflow-none pointer-events-none" /> */}
+      {/* )} */}
+      {/* {!!next() && ( */}
+      {/*   <Skeleton className="size-full absolute top-full z-50 touch-none p-2 mt-4 text-sm font-title bg-muted rounded-md flex flex-col gap-2 justify-end overflow-none pointer-events-none" /> */}
+      {/* )} */}
     </div>
   );
 }

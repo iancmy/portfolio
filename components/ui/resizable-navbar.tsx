@@ -18,10 +18,8 @@ import {
   DropdownMenuTrigger,
 } from "./dropdown-menu";
 import { ChevronDown } from "lucide-react";
-import { Status, StatusIndicator, StatusLabel } from "../kibo-ui/status";
-import { useQuery } from "@tanstack/react-query";
-import { ChatStatus } from "@/lib/types/chat";
-import { checkChatStatus } from "@/lib/api";
+import { Status, StatusIndicator } from "../kibo-ui/status";
+import { useChatStatus } from "@/app/chat/queries";
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -358,15 +356,7 @@ export const MobileNavToggle = ({
 };
 
 export const NavbarLogo = () => {
-  const chatStatusQ = useQuery<ChatStatus>({
-    queryKey: ["chat", "status"],
-    queryFn: checkChatStatus,
-    staleTime: 0,
-    refetchInterval: 30 * 1000, // every 30s
-    refetchIntervalInBackground: true,
-    refetchOnWindowFocus: true,
-    initialData: {status: "offline"}
-  })
+  const chatStatusQ = useChatStatus()
 
   return (
     <div className="relative">

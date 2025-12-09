@@ -125,5 +125,7 @@ export function arrayPrev<T>(array: T[], currIndex: number) {
 
 export function arrayNext<T>(array: T[], currIndex: number) {
   if (currIndex < 0 || currIndex >= array.length - 1) return null;
-  return array[currIndex + 1]
+  return array[currIndex + 1];
 }
+
+export const isString = (value: any) => typeof value === "string";

@@ -16,7 +16,7 @@ export namespace GoogleApi {
     };
     contentDetails: {
       duration: string;
-    }
+    };
     statistics: {
       viewCount: string;
       likeCount: string;
@@ -160,11 +160,32 @@ export namespace SlackApi {
     }
   }
 
-  export async function sendMessage(text: string, threadTs?: string) {
+  export async function sendMessage(
+    text: string,
+    name: string,
+    threadTs?: string,
+  ) {
     try {
       const result = await slack.chat.postMessage({
         channel: CHANNEL_ID,
         text: text,
+        username: name,
+        thread_ts: threadTs, // if null it creates new parent message
+      });
+      return result.ts;
+    } catch (error) {
+      console.error("Slack send error:", error);
+      throw error;
+    }
+  }
+
+  export async function endChatSession(
+    threadTs: string,
+  ) {
+    try {
+      const result = await slack.chat.postMessage({
+        channel: CHANNEL_ID,
+        text: `========= CHAT ENDED =========`,
         thread_ts: threadTs, // if null it creates new parent message
       });
       return result.ts;
@@ -182,11 +203,14 @@ export namespace SlackApi {
       });
 
       return (
-        result.messages?.map((msg) => ({
-          text: msg.text,
-          isUser: msg.bot_id ? true : false, // sender is bot
-          ts: msg.ts,
-        })) || []
+        result.messages?.map((msg) => {
+          return {
+            text: msg.text || "",
+            name: (msg as any).username || "DOM",
+            isUser: !!msg.bot_id,
+            ts: msg.ts,
+          };
+        }) || []
       );
     } catch (error) {
       console.error("Slack retrieve error:", error);

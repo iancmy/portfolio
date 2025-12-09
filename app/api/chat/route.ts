@@ -2,6 +2,7 @@ import { SlackApi } from "@/lib/server/ext";
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { ChatSecure } from "@/lib/server/crypto";
+import { isString } from "@/lib/utils";
 
 export async function GET(_: NextRequest) {
   const cookieStore = await cookies();
@@ -22,18 +23,22 @@ export async function GET(_: NextRequest) {
   }
 
   if (!threadTs || !encryptedSession)
-    return NextResponse.json({ error: "No session." }, { status: 404 });
+    return NextResponse.json({ status: "No session.", messages: [] });
 
   const messages = await SlackApi.getThread(threadTs);
   return NextResponse.json({ messages });
 }
 
+const MESSAGE_CHAR_LIMIT = 300;
+const NAME_CHAR_LIMIT = 20;
 export async function POST(req: NextRequest) {
   let message = null;
+  let name = null;
 
   try {
     const body = await req.json();
     message = body?.message;
+    name = body?.name;
   } catch (e) {
     return NextResponse.json(
       { error: `${e}: Missing request body.` },
@@ -43,6 +48,19 @@ export async function POST(req: NextRequest) {
 
   if (!message)
     return NextResponse.json({ error: "No message." }, { status: 400 });
+  if (!name) return NextResponse.json({ error: "No name." }, { status: 400 });
+  if (!isString(message) || !isString(name))
+    return NextResponse.json(
+      { error: "Invalid type. Message and name must be a string." },
+      { status: 400 },
+    );
+  if (message.length > MESSAGE_CHAR_LIMIT || name.length > NAME_CHAR_LIMIT)
+    return NextResponse.json(
+      {
+        error: `Too many characters. Message can only have ${MESSAGE_CHAR_LIMIT} characters. Name can only have ${NAME_CHAR_LIMIT} characters.`,
+      },
+      { status: 400 },
+    );
 
   const cookieStore = await cookies();
   const encryptedSession = cookieStore.get("chat_session")?.value;
@@ -61,7 +79,7 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  const newTs = await SlackApi.sendMessage(message, threadTs);
+  const newTs = await SlackApi.sendMessage(message, name, threadTs);
 
   if (!newTs)
     return NextResponse.json(
@@ -83,4 +101,37 @@ export async function POST(req: NextRequest) {
 
   // always => send newTs as timestamp
   return NextResponse.json({ timestamp: newTs });
+}
+
+export async function DELETE() {
+  const cookieStore = await cookies();
+  const encryptedSession = cookieStore.get("chat_session")?.value;
+  let threadTs: string | undefined;
+
+  if (!encryptedSession) {
+    cookieStore.delete("chat_session");
+    return NextResponse.json(
+      { error: "Invalid session. Chat session ended." },
+      { status: 200 },
+    );
+  }
+
+  try {
+    threadTs = ChatSecure.decrypt(encryptedSession);
+  } catch (e) {
+    cookieStore.delete("chat_session");
+    return NextResponse.json(
+      { error: "Invalid session. Chat session ended." },
+      { status: 200 },
+    );
+  }
+
+  try {
+    await SlackApi.endChatSession(threadTs);
+  } catch (e) {
+    console.error(e);
+  }
+
+  cookieStore.delete("chat_session");
+  return NextResponse.json({ success: true });
 }

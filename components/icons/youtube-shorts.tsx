@@ -1,10 +1,10 @@
 import { cn } from "@/lib/utils";
 
-interface Props {
+export default function YoutubeShortsIcon({
+  className,
+}: {
   className?: string;
-}
-
-export default function YoutubeShortsIcon({ className }: Props) {
+}) {
   return (
     <svg
       role="img"
