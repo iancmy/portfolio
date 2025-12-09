@@ -9,6 +9,8 @@ import { Dot } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import YoutubeIcon from "@/components/icons/youtube";
+import YoutubeShortsIcon from "@/components/icons/youtube-shorts";
 
 interface VideoCardProps {
   video: VideoData;
@@ -49,6 +51,8 @@ export default function VideoCard({
           <p className="absolute z-10 bottom-2 right-2 text-xs p-1 px-2 bg-black/40 rounded-md">
             {v.duration || parseISODuration("0")}
           </p>
+          {v.is_yt && v.type.includes("short-form") && <YoutubeShortsIcon className="absolute z-10 top-2 left-2 text-red-700 shadow-xl"/>}
+          {v.is_yt && !v.type.includes("short-form") && <YoutubeIcon className="absolute z-10 top-2 left-2 text-red-700 shadow-xl w-4 h-4"/>}
           <Checkbox
             className="absolute z-50 top-2 right-2 cursor-pointer opacity-0 group-hover:opacity-100 transition-all duration-400 w-5 h-5 shadow-sm shadow-black/30"
             checked={isSelected}
