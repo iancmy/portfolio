@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "./navbar";
 import Footer from "./footer";
 import Providers from "./providers";
+import { Analytics } from "@vercel/analytics/next"
 
 const titleFont = Outfit({
   variable: "--font-title",
@@ -38,6 +39,7 @@ export default async function RootLayout({
           </main>
           <Footer />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );
