@@ -430,11 +430,18 @@ export default function Pp2Img() {
               <SelectContent>
                 <SelectGroup>
                   <SelectLabel>Sequences</SelectLabel>
-                  {sequences.map((sequence) => (
-                    <SelectItem key={sequence.id} value={sequence.id}>
-                      {sequence.name}
-                    </SelectItem>
-                  ))}
+                  {sequences
+                    .filter((s) => !!s.id && !!s.name)
+                    .map((sequence, i) => {
+                      return (
+                        <SelectItem
+                          key={sequence.id || `unnamed-sequence-${i}`}
+                          value={sequence.id || `unnamed-sequence-${i}`}
+                        >
+                          {sequence.name || `unnamed-sequence-${i}`}
+                        </SelectItem>
+                      );
+                    })}
                 </SelectGroup>
               </SelectContent>
             </Select>
