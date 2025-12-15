@@ -356,8 +356,6 @@ export const MobileNavToggle = ({
 };
 
 export const NavbarLogo = () => {
-  const chatStatusQ = useChatStatus()
-
   return (
     <div className="relative">
       <Link
@@ -374,13 +372,6 @@ export const NavbarLogo = () => {
         <span className="font-title text-2xl font-medium text-foreground">
           iancmy
         </span>
-        <Status
-          className="rounded-full text-xs absolute top-3 right-0.5 pointer-events-none"
-          status={chatStatusQ.data.status}
-          variant="none"
-        >
-          <StatusIndicator />
-        </Status>
       </Link>
     </div>
   );

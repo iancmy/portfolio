@@ -23,7 +23,7 @@ const navItems = [
     name: "Dev",
     children: [
       { name: "Projects", link: "https://github.com/iancmy?tab=repositories", asNewTab: true },
-      { name: "Tools", link: "/dev/tools" },
+      { name: "Tools", link: "/tools" },
     ],
   },
   {
@@ -45,6 +45,7 @@ export function Navbar() {
   return (
     <ResizableNavbar>
       {/* Desktop */}
+
       <NavBody>
         <NavbarLogo />
         <NavItems items={navItems} />

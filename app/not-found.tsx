@@ -9,6 +9,8 @@ export default function NotFound() {
           src="/images/dom-sad.png"
           alt="dom-sad"
           fill
+          sizes="100%"
+          loading="eager"
         />
       </div>
       <div className="flex flex-col items-start not-lg:items-center justify-center lg:self-end">
