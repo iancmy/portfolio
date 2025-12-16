@@ -15,6 +15,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { useAsRef } from "@/lib/hooks/use-as-ref";
 import { useLazyRef } from "@/lib/hooks/use-lazy-ref";
+import { ScrollArea, ScrollBar } from "./scroll-area";
 
 const ROOT_NAME = "FileUpload";
 const DROPZONE_NAME = "FileUploadDropzone";
@@ -177,8 +178,10 @@ function useFileUploadContext(consumerName: string) {
   return context;
 }
 
-interface FileUploadProps
-  extends Omit<React.ComponentProps<"div">, "defaultValue" | "onChange"> {
+interface FileUploadProps extends Omit<
+  React.ComponentProps<"div">,
+  "defaultValue" | "onChange"
+> {
   value?: File[];
   defaultValue?: File[];
   onValueChange?: (files: File[]) => void;
@@ -929,6 +932,7 @@ function FileUploadList(props: FileUploadListProps) {
     orientation = "vertical",
     asChild,
     forceMount,
+    children,
     ...listProps
   } = props;
 
@@ -951,11 +955,22 @@ function FileUploadList(props: FileUploadListProps) {
       dir={context.dir}
       {...listProps}
       className={cn(
-        "data-[state=inactive]:fade-out-0 data-[state=active]:fade-in-0 data-[state=inactive]:slide-out-to-top-2 data-[state=active]:slide-in-from-top-2 flex flex-col gap-2 data-[state=active]:animate-in data-[state=inactive]:animate-out",
-        orientation === "horizontal" && "flex-row overflow-x-auto p-1.5",
-        className,
+        "data-[state=inactive]:fade-out-0 data-[state=active]:fade-in-0 data-[state=inactive]:slide-out-to-top-2 data-[state=active]:slide-in-from-top-2 data-[state=active]:animate-in data-[state=inactive]:animate-out",
+        className
       )}
-    />
+    >
+      <ScrollArea className="h-full w-full">
+        <div
+          className={cn(
+            "flex flex-col gap-2 max-h-60",
+            orientation === "horizontal" && "flex-row p-1.5 gap-2",
+          )}
+        >
+          {children}
+        </div>
+        <ScrollBar orientation={orientation} />
+      </ScrollArea>
+    </ListPrimitive>
   );
 }
 

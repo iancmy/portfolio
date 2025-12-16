@@ -73,6 +73,7 @@ import {
 } from "@/components/ui/tooltip";
 import { InputGroup } from "@/components/ui/input-group";
 import { AnimatePresence, motion } from "motion/react";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const DEFAULT_FLAGS: Record<SyncableKey, boolean> = {
   title: true,
@@ -444,11 +445,14 @@ export default function Pp2Img() {
             </FileUploadDropzone>
           )}
 
-          <FileUploadList>
+          <FileUploadList className="w-full max-h-60">
             {files.map((file) => (
-              <FileUploadItem key={file.name} value={file}>
+              <FileUploadItem
+                key={file.name}
+                value={file}
+                className="max-h-12"
+              >
                 <FileUploadItemMetadata />
-                <FileUploadItemDelete />
               </FileUploadItem>
             ))}
           </FileUploadList>
