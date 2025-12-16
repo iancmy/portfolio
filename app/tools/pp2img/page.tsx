@@ -93,7 +93,7 @@ export default function Pp2Img() {
   );
 
   const onFileReject = useCallback((file: File, message: string) => {
-    console.log(
+    console.error(
       `${message} : "${
         file.name.length > 20 ? `${file.name.slice(0, 20)}...` : file.name
       }" has been rejected.`,

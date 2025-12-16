@@ -1,5 +1,11 @@
 "use client";
-import { arrayEq, cn, formatNumber } from "@/lib/utils";
+import {
+  arrayEq,
+  cn,
+  formatNumber,
+  toKebabCase,
+  toTitleCase,
+} from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPortfolio } from "@/lib/api";
 import { Portfolio } from "@/lib/portfolio";
@@ -19,6 +25,8 @@ import {
   FunnelX,
   Heart,
   HeartOff,
+  Search,
+  SearchCheck,
   SearchIcon,
   Settings2,
   Star,
@@ -78,6 +86,7 @@ export default function Work() {
     setValue: setSearch,
     debouncedQValue: search,
   } = useDebouncedQState("q", "");
+  const [prevSort, setPrevSort] = useState<string | null>(null);
   const [sort, setSort] = useQueryState(
     "sort",
     parseAsString.withDefault("views:desc"),
@@ -119,6 +128,16 @@ export default function Work() {
     setVisibleCount(PAGE_SIZE);
   }, [search, sort, filter]);
 
+  useEffect(() => {
+    if (search && !prevSort) {
+      setPrevSort(sort);
+      setSort("relevant");
+    } else if (!search && prevSort) {
+      if (sort === "relevant") setSort(prevSort);
+      setPrevSort(null);
+    }
+  }, [search, sort, prevSort]);
+
   const query = useMemo(() => {
     if (portfQ.isLoading || !portfQ?.data) return new Portfolio();
     let query = portfQ.data;
@@ -147,6 +166,7 @@ export default function Work() {
       query = query.filter.likes(`${filter.likes[0]}..${filter.likes[1]}`);
 
     // sort
+    if (sort === "relevant") return query;
     if (sort) query = query.search(`[sort:${sort}]`);
 
     return query;
@@ -154,7 +174,8 @@ export default function Work() {
 
   const setQueue = useVideoQueueStore((state) => state.setQueue);
   useEffect(() => {
-    if (query.videos && query.count > 0) setQueue(query.videos.map((v) => v.id));
+    if (query.videos && query.count > 0)
+      setQueue(query.videos.map((v) => v.id));
   }, [query.videos, query.count, setQueue]);
 
   useEffect(() => {
@@ -271,6 +292,9 @@ export default function Work() {
               orientation="vertical"
               className="items-start"
             >
+              <SortItem value="relevant" label="Most Relevant">
+                <SearchCheck />
+              </SortItem>
               <SortItem value="date:oldest" label="Oldest">
                 <CalendarArrowDown />
               </SortItem>
@@ -389,7 +413,7 @@ export default function Work() {
           ) : sort === "likes:asc" ? (
             <HeartOff />
           ) : (
-            <CircleQuestionMark />
+            <SearchCheck />
           )}
 
           {sort === "date:oldest"
@@ -408,7 +432,7 @@ export default function Work() {
                         ? "Most Liked"
                         : sort === "likes:asc"
                           ? "Least Liked"
-                          : "None"}
+                          : "Most Relevant"}
           <Settings2 />
         </Badge>
       </div>
@@ -597,28 +621,15 @@ export default function Work() {
                   </MultiSelectTrigger>
                   <MultiSelectContent>
                     <MultiSelectGroup>
-                      <MultiSelectItem value="gameplay">
-                        Gameplay
-                      </MultiSelectItem>
-                      <MultiSelectItem value="event">Event</MultiSelectItem>
-                      <MultiSelectItem value="teaser">Teaser</MultiSelectItem>
-                      <MultiSelectItem value="vlog">Vlog</MultiSelectItem>
-                      <MultiSelectItem value="irl_content">
-                        IRL Content
-                      </MultiSelectItem>
-                      <MultiSelectItem value="short_film">
-                        Short Film
-                      </MultiSelectItem>
-                      <MultiSelectItem value="music_video">
-                        Music Video
-                      </MultiSelectItem>
-                      <MultiSelectItem value="promotional">
-                        Promotional
-                      </MultiSelectItem>
-                      <MultiSelectItem value="compilation">
-                        Compilation
-                      </MultiSelectItem>
-                      <MultiSelectItem value="other">Other</MultiSelectItem>
+                      {portfQ.data &&
+                        portfQ.data?.categories.map((c) => (
+                          <MultiSelectItem
+                            key={`category-${toKebabCase(c)}`}
+                            value={c}
+                          >
+                            {toTitleCase(c)}
+                          </MultiSelectItem>
+                        ))}
                     </MultiSelectGroup>
                   </MultiSelectContent>
                 </MultiSelect>
@@ -634,13 +645,15 @@ export default function Work() {
                   </MultiSelectTrigger>
                   <MultiSelectContent>
                     <MultiSelectGroup>
-                      <MultiSelectItem value="video_editor">
-                        Video Editor
-                      </MultiSelectItem>
-                      <MultiSelectItem value="camera">Camera</MultiSelectItem>
-                      <MultiSelectItem value="director">
-                        Director
-                      </MultiSelectItem>
+                      {portfQ.data &&
+                        portfQ.data?.roles.map((r) => (
+                          <MultiSelectItem
+                            key={`role-${toKebabCase(r)}`}
+                            value={r}
+                          >
+                            {toTitleCase(r)}
+                          </MultiSelectItem>
+                        ))}
                     </MultiSelectGroup>
                   </MultiSelectContent>
                 </MultiSelect>
@@ -656,23 +669,15 @@ export default function Work() {
                   </MultiSelectTrigger>
                   <MultiSelectContent>
                     <MultiSelectGroup>
-                      <MultiSelectItem value="long-form">
-                        Long-form
-                      </MultiSelectItem>
-                      <MultiSelectItem value="short-form">
-                        Short-form
-                      </MultiSelectItem>
-                      <MultiSelectItem value="partial">
-                        Partial Edit
-                      </MultiSelectItem>
-                      <MultiSelectItem value="cut">Cut Only</MultiSelectItem>
-                      <MultiSelectItem value="subtitles">
-                        Subtitles Only
-                      </MultiSelectItem>
-                      <MultiSelectItem value="unpublished">
-                        Unpublished
-                      </MultiSelectItem>
-                      <MultiSelectItem value="hidden">Hidden</MultiSelectItem>
+                      {portfQ.data &&
+                        portfQ.data?.types.map((t) => (
+                          <MultiSelectItem
+                            key={`type-${toKebabCase(t)}`}
+                            value={t}
+                          >
+                            {toTitleCase(t)}
+                          </MultiSelectItem>
+                        ))}
                     </MultiSelectGroup>
                   </MultiSelectContent>
                 </MultiSelect>

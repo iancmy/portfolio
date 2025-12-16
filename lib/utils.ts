@@ -129,3 +129,13 @@ export function arrayNext<T>(array: T[], currIndex: number) {
 }
 
 export const isString = (value: any) => typeof value === "string";
+
+export function toTitleCase(str: string) {
+  if (!str) return "";
+
+  return str
+    .replace(/[-_]/g, " ")
+    .replace(/\w\S*/g, (word) => {
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    });
+}

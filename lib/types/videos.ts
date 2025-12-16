@@ -2,11 +2,13 @@ export type VideoRoles = "director" | "camera" | "video_editor";
 export type VideoTypes =
   | "long-form"
   | "short-form"
+  | "motion-graphics"
   | "partial"
   | "cut"
   | "subtitles"
   | "unpublished"
-  | "hidden";
+  | "hidden"
+  | string;
 export type VideoCategories =
   | "gameplay"
   | "event"
@@ -17,7 +19,10 @@ export type VideoCategories =
   | "music_video"
   | "promotional"
   | "compilation"
-  | "other";
+  | "other"
+  | string;
+
+export type VideoTag = string;
 
 export interface VideoToml {
   date: string;
@@ -32,6 +37,7 @@ export interface VideoToml {
   src: string; // conditional || with fallback_src and ext_src to ensure there's always a value here
   fallback_src?: string;
   ext_src?: string;
+  tags: VideoTag[];
 }
 
 export interface NonYtVideoData extends Omit<VideoToml, "date" | "is_yt"> {

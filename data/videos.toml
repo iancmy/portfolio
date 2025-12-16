@@ -9,7 +9,6 @@ category = ["other"]
 fallback_src = "https://youtu.be/PtT49H9tlgY"
 is_yt = false
 
-
 [[videos]]
 date = 2015-11-26
 title = "Maria's 18th Teaser"

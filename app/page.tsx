@@ -84,7 +84,7 @@ export default function Home() {
           </Link>{" "}
           for work and{" "}
           <Link
-            href="/dev/projects"
+            href="/dev"
             className="underline font-bold text-primary"
           >
             write code

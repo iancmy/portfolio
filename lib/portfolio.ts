@@ -34,7 +34,9 @@ export class Portfolio<T extends VideoData = VideoData> {
   }
 
   get yt() {
-    const ytVideos = this.videos.filter((v) => v.is_yt && v?.channel_src && v?.views && v?.likes) as YtVideoData[];
+    const ytVideos = this.videos.filter(
+      (v) => v.is_yt && v?.channel_src && v?.views && v?.likes,
+    ) as YtVideoData[];
     return new Portfolio<YtVideoData>(ytVideos);
   }
 
@@ -224,8 +226,8 @@ export class Portfolio<T extends VideoData = VideoData> {
   }
 
   #filterIds(...ids: string[]) {
-    const filtered = this.videos.filter(v => ids.includes(v.id))
-    return new Portfolio(filtered)
+    const filtered = this.videos.filter((v) => ids.includes(v.id));
+    return new Portfolio(filtered);
   }
 
   get filter() {
@@ -239,7 +241,7 @@ export class Portfolio<T extends VideoData = VideoData> {
       views: (query: string) => this.#filterViews(query),
       likes: (query: string) => this.#filterLikes(query),
 
-      id: (...ids: string[]) => this.#filterIds(...ids)
+      id: (...ids: string[]) => this.#filterIds(...ids),
     };
   }
 
@@ -286,8 +288,8 @@ export class Portfolio<T extends VideoData = VideoData> {
   #sortViews(asc = false) {
     const MULT = asc ? 1 : -1;
     const sorted = this.videos.toSorted((a, b) => {
-      if (!a.is_yt) return 1
-      if (!b.is_yt) return -1
+      if (!a.is_yt) return 1;
+      if (!b.is_yt) return -1;
 
       const diff = a.views - b.views;
       return diff * MULT;
@@ -299,8 +301,8 @@ export class Portfolio<T extends VideoData = VideoData> {
   #sortLikes(asc = false) {
     const MULT = asc ? 1 : -1;
     const sorted = this.videos.toSorted((a, b) => {
-      if (!a.is_yt) return 1
-      if (!b.is_yt) return -1
+      if (!a.is_yt) return 1;
+      if (!b.is_yt) return -1;
 
       const diff = a.likes - b.likes;
       return diff * MULT;
@@ -315,7 +317,7 @@ export class Portfolio<T extends VideoData = VideoData> {
         oldest: () => this.#sortDate(true),
         asc: () => this.#sortDate(true),
         latest: () => this.#sortDate(),
-        desc: () => this.#sortDate()
+        desc: () => this.#sortDate(),
       },
       title: {
         asc: () => this.#sortTitle(true),
@@ -369,8 +371,8 @@ export class Portfolio<T extends VideoData = VideoData> {
           : `${prefilter.op}${prefilter.value}`,
       );
     } else if (prefilter.type === "ids") {
-      const value = prefilter.value.split(",")
-      return this.filter.id(...value)
+      const value = prefilter.value.split(",");
+      return this.filter.id(...value);
     }
 
     return this;
@@ -378,22 +380,29 @@ export class Portfolio<T extends VideoData = VideoData> {
 
   #presort(presort: Extract<SearchPreprocess, { category: "sort" }>) {
     if (presort.type === "date") {
-      return presort.direction === "asc" || presort.direction === "oldest" ? this.sort.date.oldest() : this.sort.date.latest()
-    }
-    else if (presort.type === "title") {
-      return presort.direction === "asc" ? this.sort.title.asc() : this.sort.title.desc()
-    }
-    else if (presort.type === "client") {
-      return presort.direction === "asc" ? this.sort.client.asc() : this.sort.client.desc()
-    }
-    else if (presort.type === "id") {
-      return presort.direction === "asc" ? this.sort.id.asc() : this.sort.id.desc()
-    }
-    else if (presort.type === "views") {
-      return presort.direction === "asc" ? this.sort.views.asc() : this.sort.views.desc()
-    }
-    else if (presort.type === "likes") {
-      return presort.direction === "asc" ? this.sort.likes.asc() : this.sort.likes.desc()
+      return presort.direction === "asc" || presort.direction === "oldest"
+        ? this.sort.date.oldest()
+        : this.sort.date.latest();
+    } else if (presort.type === "title") {
+      return presort.direction === "asc"
+        ? this.sort.title.asc()
+        : this.sort.title.desc();
+    } else if (presort.type === "client") {
+      return presort.direction === "asc"
+        ? this.sort.client.asc()
+        : this.sort.client.desc();
+    } else if (presort.type === "id") {
+      return presort.direction === "asc"
+        ? this.sort.id.asc()
+        : this.sort.id.desc();
+    } else if (presort.type === "views") {
+      return presort.direction === "asc"
+        ? this.sort.views.asc()
+        : this.sort.views.desc();
+    } else if (presort.type === "likes") {
+      return presort.direction === "asc"
+        ? this.sort.likes.asc()
+        : this.sort.likes.desc();
     }
 
     return this;
@@ -415,42 +424,64 @@ export class Portfolio<T extends VideoData = VideoData> {
     );
 
     const searchQ = query.replace(preprocessR, "").trim();
-    if (!searchQ) return processed
+    if (!searchQ) return processed;
 
     const fuzzy = createFuzzySearch<T>(processed.videos, {
-      getText: (video) => [video.title, video.description, video.client],
+      getText: (video) => [
+        video.title,
+        video.description,
+        video.client,
+        ...video.category,
+        ...video.tags,
+      ],
     });
 
-    return new Portfolio(fuzzy(searchQ).map(r => r.item));
+    return new Portfolio(fuzzy(searchQ).map((r) => r.item));
   }
 
   head(count: number) {
-    return new Portfolio(this.videos.slice(0, count))
+    return new Portfolio(this.videos.slice(0, count));
   }
 
   tail(count: number) {
-    return new Portfolio(this.videos.slice(-count))
+    return new Portfolio(this.videos.slice(-count));
   }
 
   get max() {
-    const mostPopular = this.sort.views.desc().videos[0] as YtVideoData
-    const mostLiked = this.sort.likes.desc().videos[0] as YtVideoData
+    const mostPopular = this.sort.views.desc().videos[0] as YtVideoData;
+    const mostLiked = this.sort.likes.desc().videos[0] as YtVideoData;
 
     return {
       views: mostPopular?.views || 200_000_000,
       likes: mostLiked?.likes || 20_000_000,
-      date: this.sort.date.latest().videos[0]?.date || new Date()
-    }
+      date: this.sort.date.latest().videos[0]?.date || new Date(),
+    };
   }
 
   get min() {
-    const leastPopular = this.sort.views.asc().videos[0] as YtVideoData
-    const leastLiked = this.sort.likes.asc().videos[0] as YtVideoData
+    const leastPopular = this.sort.views.asc().videos[0] as YtVideoData;
+    const leastLiked = this.sort.likes.asc().videos[0] as YtVideoData;
 
     return {
       views: leastPopular?.views || 0,
       likes: leastLiked?.likes || 0,
-      date: this.sort.date.oldest().videos[0]?.date || new Date("1/1/2010")
-    }
+      date: this.sort.date.oldest().videos[0]?.date || new Date("1/1/2010"),
+    };
+  }
+
+  get categories() {
+    return [...new Set(this.videos.map((v) => v.category).reduce((a, c) => [...a, ...c], []))].toSorted();
+  }
+
+  get roles() {
+    return [...new Set(this.videos.map((v) => v.role).reduce((a, c) => [...a, ...c], []))].toSorted();
+  }
+
+  get types() {
+    return [...new Set(this.videos.map((v) => v.type).reduce((a, c) => [...a, ...c], []))].toSorted();
+  }
+
+  get tags() {
+    return [...new Set(this.videos.map((v) => v.tags).reduce((a, c) => [...a, ...c], []))].toSorted();
   }
 }

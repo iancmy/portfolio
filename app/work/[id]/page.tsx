@@ -303,7 +303,7 @@ export default function VideoPlayer({ params, searchParams }: VideoPlayerProps) 
           screen.orientation.lock
         ) {
           await screen.orientation.lock("landscape").catch((err) => {
-            console.log("Orientation lock not supported/allowed:", err);
+            console.error("Orientation lock not supported/allowed:", err);
           });
         }
       } catch (err) {

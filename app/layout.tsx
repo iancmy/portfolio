@@ -4,7 +4,7 @@ import "./globals.css";
 import { Navbar } from "./navbar";
 import Footer from "./footer";
 import Providers from "./providers";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 const titleFont = Outfit({
   variable: "--font-title",

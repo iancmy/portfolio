@@ -20,12 +20,14 @@ export function parseVideos() {
   const videos = videosToml.map((video, i) => {
     const description = video?.description || "";
     const src = video.is_yt ? video.ext_src : video?.src || video?.fallback_src || video?.ext_src || "";
+    const tags = video?.tags || []
     const data = {
       ...video,
       description,
       src,
       id: `${i}-${toKebabCase(video.title)}`,
       date: new Date(video.date),
+      tags,
     };
     return data as VideoData;
   });
