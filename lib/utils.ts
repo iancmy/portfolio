@@ -2,6 +2,7 @@ import { VideoData } from "./types";
 import { Activity } from "@/components/kibo-ui/contribution-graph";
 import { clsx, type ClassValue } from "clsx";
 import { formatISO } from "date-fns";
+import { SyntheticEvent } from "react";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -133,9 +134,14 @@ export const isString = (value: any) => typeof value === "string";
 export function toTitleCase(str: string) {
   if (!str) return "";
 
-  return str
-    .replace(/[-_]/g, " ")
-    .replace(/\w\S*/g, (word) => {
-      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-    });
+  return str.replace(/[-_]/g, " ").replace(/\w\S*/g, (word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  });
+}
+
+export function stopPropagation(e: SyntheticEvent | Event) {
+  e.stopPropagation();
+  if ((e as SyntheticEvent).nativeEvent) {
+    (e as SyntheticEvent).nativeEvent.stopImmediatePropagation();
+  }
 }

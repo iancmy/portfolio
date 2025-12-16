@@ -8,6 +8,7 @@ export interface Clip {
 }
 
 export interface Track {
+  name?: string;
   type: "video" | "audio";
   index: number;
   clips: Clip[];
@@ -18,6 +19,8 @@ export interface Sequence {
   name: string;
   tracks: Track[];
 }
+
+const TICKS_PER_SECOND = 254016000000;
 
 export function parsePremiereXML(xmlString: string): Sequence[] {
   const parser = new DOMParser();
@@ -56,6 +59,7 @@ export function parsePremiereXML(xmlString: string): Sequence[] {
         const clipTrack = uRef ? nodeMap.get(uRef) : null;
         if (!clipTrack) return;
 
+        const trackName = clipTrack.querySelector("Name")?.textContent;
         const index = parseInt(trackRef.getAttribute("Index") || "0", 10);
         const type = clipTrack.tagName.startsWith("Video") ? "video" : "audio";
         const clips: Clip[] = [];
@@ -82,10 +86,13 @@ export function parsePremiereXML(xmlString: string): Sequence[] {
             }
           }
 
+          const rawStart = parseInt(itemNode.querySelector("Start")?.textContent || "0", 10)
+          const rawEnd = parseInt(itemNode.querySelector("End")?.textContent || "0", 10)
+
           clips.push({
             name: subClipNode?.querySelector("Name")?.textContent || "Untitled",
-            start: parseInt(itemNode.querySelector("Start")?.textContent || "0", 10),
-            end: parseInt(itemNode.querySelector("End")?.textContent || "0", 10),
+            start: rawStart / TICKS_PER_SECOND,
+            end: rawEnd / TICKS_PER_SECOND,
             isAdjustmentLayer,
           });
         });
@@ -96,7 +103,7 @@ export function parsePremiereXML(xmlString: string): Sequence[] {
         if (existingTrack) {
           existingTrack.clips.push(...clips);
         } else {
-          trackMap.set(uniqueKey, { index, type, clips });
+          trackMap.set(uniqueKey, { name: trackName, index, type, clips });
         }
       });
     });

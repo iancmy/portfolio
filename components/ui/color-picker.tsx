@@ -17,7 +17,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { PipetteIcon } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, ReactNode } from "react";
 import {
   hexToRgb,
   rgbToHsl,
@@ -47,6 +47,8 @@ interface ColorPickerProps {
   error?: string;
   className?: string;
   alpha?: boolean;
+  disabled?: boolean;
+  overlay?: ReactNode;
 }
 
 interface ColorValues {
@@ -62,7 +64,9 @@ export default function InputColor({
   onChange,
   error,
   alpha,
-  className
+  className,
+  disabled,
+  overlay
 }: ColorPickerProps) {
   const [colorFormat, setColorFormat] = useState(alpha ? "HEXA" : "HEX");
   const [colorValues, setColorValues] = useState<ColorValues>(() => {
@@ -313,6 +317,7 @@ export default function InputColor({
               className={cn("border-border border shadow-none relative overflow-hidden cursor-pointer", className)}
               size={"icon"}
               style={{ backgroundColor: hexInputValue }}
+              disabled={disabled}
             >
               {alpha && colorValues.rgba && colorValues.rgba.a < 1 && (
                 <div
@@ -327,6 +332,7 @@ export default function InputColor({
                   }}
                 />
               )}
+              {overlay}
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-auto p-3" align="start">
