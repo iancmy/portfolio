@@ -22,7 +22,7 @@ const navItems = [
   {
     name: "Dev",
     children: [
-      { name: "Projects", link: "https://github.com/iancmy?tab=repositories", asNewTab: true },
+      { name: "Projects", link: "/dev" },
       { name: "Tools", link: "/tools" },
     ],
   },

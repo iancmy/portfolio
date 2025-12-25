@@ -1,6 +1,8 @@
 import { Portfolio } from "./portfolio";
+import { Repositories } from "./repos";
 import { VideoData } from "./types";
 import { ChatMessages, ChatStatus, ChatTimestamp } from "./types/chat";
+import { GHActivity, GHActivityDate } from "./types/github";
 
 export async function fetchPortfolio() {
   const url = `/api/videos`;
@@ -54,7 +56,10 @@ export async function getChat(): Promise<ChatMessages> {
   return result;
 }
 
-export async function sendChat(message: string, name: string): Promise<ChatTimestamp> {
+export async function sendChat(
+  message: string,
+  name: string,
+): Promise<ChatTimestamp> {
   const url = "/api/chat";
   const body = { message, name };
   const bodyJson = JSON.stringify(body);
@@ -79,13 +84,38 @@ export async function sendChat(message: string, name: string): Promise<ChatTimes
 }
 
 export async function endChat() {
-  const url = "/api/chat"
-  const response = await fetch(url, {method: "DELETE"})
+  const url = "/api/chat";
+  const response = await fetch(url, { method: "DELETE" });
 
   if (!response.ok) {
-    throw new Error("Failed to end chat.")
+    throw new Error("Failed to end chat.");
   }
 
-  const success = (await response.json()).success
-  return success
+  const success = (await response.json()).success;
+  return success;
+}
+
+export async function fetchGithubActivity(date: GHActivityDate) {
+  const GITHUB_USER = "iancmy";
+  const url = `/api/github/activity?username=${GITHUB_USER}&date=${date.toString()}`;
+
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error("Error fetching Github Activity");
+  }
+
+  return (await response.json()) as GHActivity;
+}
+
+export async function fetchRepositories() {
+  const url = "/api/github/repos";
+
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error("Error fetching Repositories");
+  }
+
+  return new Repositories(await response.json());
 }

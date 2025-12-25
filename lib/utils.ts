@@ -4,6 +4,7 @@ import { clsx, type ClassValue } from "clsx";
 import { formatISO } from "date-fns";
 import { SyntheticEvent } from "react";
 import { twMerge } from "tailwind-merge";
+import { GHActivity, GHActivityDay, GHActivityWeek } from "./types/github";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -85,6 +86,16 @@ export function formatNumber(num: number, maxFractionDigits = 1) {
   }).format(num);
 }
 
+export function formatBytes(bytes: number, maxFractionDigits = 2) {
+  return new Intl.NumberFormat("en-US", {
+    notation: "compact",
+    style: "unit",
+    unit: "byte",
+    unitDisplay: "narrow",
+    maximumFractionDigits: maxFractionDigits,
+  }).format(bytes);
+}
+
 export function parseISODuration(isoDuration: string): string {
   const matches = isoDuration.match(
     /P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/,
@@ -144,4 +155,35 @@ export function stopPropagation(e: SyntheticEvent | Event) {
   if ((e as SyntheticEvent).nativeEvent) {
     (e as SyntheticEvent).nativeEvent.stopImmediatePropagation();
   }
+}
+
+export function githubDataToActivity(data: GHActivity) {
+  const ghActivity = data.weeks.flatMap((week) => week.contributionDays);
+  const activityData: Activity[] = ghActivity.map((activity) => {
+    return {
+      date: formatISO(activity.date, { representation: "date" }),
+      count: activity.contributionCount,
+      level: Math.min(4, activity.contributionCount),
+    } as Activity;
+  });
+
+  return activityData.sort((a, b) => a.date.localeCompare(b.date));
+}
+
+
+export function getLevenshteinDistance(a: string, b: string): number {
+  const matrix = Array.from({ length: a.length + 1 }, (_, i) => [i]);
+  for (let j = 1; j <= b.length; j++) matrix[0][j] = j;
+
+  for (let i = 1; i <= a.length; i++) {
+    for (let j = 1; j <= b.length; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      matrix[i][j] = Math.min(
+        matrix[i - 1][j] + 1,
+        matrix[i][j - 1] + 1,
+        matrix[i - 1][j - 1] + cost
+      );
+    }
+  }
+  return matrix[a.length][b.length];
 }

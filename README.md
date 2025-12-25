@@ -1,17 +1,15 @@
-# iancmy-web
+# **Ian's Portfolio**
 
-## Getting Started
+A high-performance, interactive personal portfolio and project showcase. This
+application represents a significant improvement from the previous static site,
+moving to a modern **Next.js 15** architecture to support dynamic features,
+advanced animations, and a video portfolio management system.
 
-First, run the development server:
+## **Tech Stack**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Category             | Technology                        |
+| :------------------- | :-------------------------------- |
+| **Framework**        | Next.js 15 (App Router), React 19 |
+| **Styling**          | Tailwind CSS, Shadcn/UI           |
+| **Animations**       | Framer Motion                     |
+| **State Management** | Zustand, Tanstack Query           |

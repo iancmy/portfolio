@@ -1,5 +1,7 @@
 import "server-only";
 import { WebClient } from "@slack/web-api";
+import { subDays } from "date-fns";
+import { GHActivityDate } from "../types/github";
 
 export namespace GoogleApi {
   const BASE_URL = "https://www.googleapis.com";
@@ -179,9 +181,7 @@ export namespace SlackApi {
     }
   }
 
-  export async function endChatSession(
-    threadTs: string,
-  ) {
+  export async function endChatSession(threadTs: string) {
     try {
       const result = await slack.chat.postMessage({
         channel: CHANNEL_ID,
@@ -216,5 +216,162 @@ export namespace SlackApi {
       console.error("Slack retrieve error:", error);
       return [];
     }
+  }
+}
+
+export namespace GithubApi {
+  const ACTIVITY_API_KEY = process.env.GITHUB_ACTIVITY;
+  const GITHUB_API_KEY = process.env.GITHUB_API;
+  const GITHUB_USER = "iancmy";
+  const GITHUB_ORG = "sudomnc";
+
+  export async function getActivity(username: string, date: GHActivityDate) {
+    const query = `
+    query($username: String!, $from: DateTime!, $to: DateTime!) {
+      user(login: $username) {
+        contributionsCollection(from: $from, to: $to) {
+          contributionCalendar {
+            totalContributions
+            weeks {
+              contributionDays {
+                contributionCount
+                date
+                color
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+    let from, to;
+
+    if (typeof date === "number") {
+      from = `${date}-01-01T00:00:00Z`;
+      to = `${date}-12-31T23:59:59Z`;
+    } else if (date === "present") {
+      const now = new Date();
+      to = now.toISOString();
+      from = subDays(now, 365).toISOString();
+    } else {
+      throw new Error("Invalid date");
+    }
+
+    try {
+      const res = await fetch("https://api.github.com/graphql", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${ACTIVITY_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query, variables: { username, from, to } }),
+      });
+
+      if (!res.ok) throw new Error("Error fetching Github Activity");
+
+      return res;
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  export async function getAllRepositories(): Promise<any[]> {
+    const personalRepos = await fetchAllNodes("user", GITHUB_USER);
+    const orgRepos = await fetchAllNodes("organization", GITHUB_ORG);
+
+    return [...orgRepos, ...personalRepos];
+  }
+
+  async function fetchAllNodes(type: "user" | "organization", login: string) {
+    let allNodes: any[] = [];
+    let hasNextPage = true;
+    let afterCursor: string | null = null;
+
+    const query = `
+      query($login: String!, $after: String) {
+        ${type}(login: $login) {
+          repositories(first: 100, after: $after, orderBy: {field: UPDATED_AT, direction: DESC}) {
+            nodes {
+              name
+              description
+              url
+              homepageUrl
+              isFork
+              isPrivate
+              stargazerCount
+              updatedAt
+              licenseInfo {
+                name
+                nickname
+                url
+                description
+                conditions { key label description }
+                limitations { key label description }
+                permissions { key label description }
+              }
+              latestRelease {
+                name
+                tagName
+                publishedAt
+                url
+                description
+                releaseAssets(first: 50) {
+                  nodes {
+                    name
+                    downloadUrl
+                    contentType
+                    size
+                  }
+                }
+              }
+              languages(first: 3, orderBy: {field: SIZE, direction: DESC}) {
+                nodes {
+                  name
+                  color
+                }
+              }
+            }
+            pageInfo {
+              hasNextPage
+              endCursor
+            }
+          }
+        }
+      }
+    `;
+
+    while (hasNextPage) {
+      try {
+        const res: any = await fetch("https://api.github.com/graphql", {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${GITHUB_API_KEY}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            query,
+            variables: { login, after: afterCursor },
+          }),
+        });
+
+        const json = await res.json();
+
+        if (json.errors) {
+          console.error(`GraphQL Error for ${login}:`, json.errors);
+          break;
+        }
+
+        const data = json.data[type].repositories;
+        allNodes = [...allNodes, ...data.nodes];
+
+        hasNextPage = data.pageInfo.hasNextPage;
+        afterCursor = data.pageInfo.endCursor;
+      } catch (e) {
+        console.error(`Fetch error for ${login}:`, e);
+        break;
+      }
+    }
+
+    return allNodes;
   }
 }
